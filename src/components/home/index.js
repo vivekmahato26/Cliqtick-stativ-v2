@@ -128,7 +128,16 @@ export default function Home() {
             </p>
           </span>
           <div>
-            <img src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2FLooking.gif?alt=media&token=ed2ce3a2-bf77-4b40-bc38-21c8c377dd52" alt="why choose us"/>
+          <video
+              className={styles.video}
+              about="Cliqtick Introduction"
+              controls={false}
+              muted
+              autoPlay
+              loop
+              width="100%"
+              src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2FLooking%201.mp4?alt=media&token=600f15df-8c50-49ac-99a5-7100539c82f7"
+            />
           </div>
         </div>
       </section>

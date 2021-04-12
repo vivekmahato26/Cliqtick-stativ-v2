@@ -57,10 +57,7 @@ export default function Pricing() {
     err: false,
     message: "",
   });
-  const [serviceErr, setServiceErr] = useState({
-    err: false,
-    message: "",
-  });
+  
 
   const handleSubmit = () => {
     const temp = {
@@ -160,24 +157,6 @@ export default function Pricing() {
       });
     } else {
       setCompanyErr((prev) => {
-        return tempErr;
-      });
-    }
-    if (
-      temp.service === "---Select Service---" ||
-      temp.service === null ||
-      temp.service === undefined
-    ) {
-      let err = {
-        err: true,
-        message: "Please Select a Service",
-      };
-      error = true;
-      setServiceErr((prev) => {
-        return err;
-      });
-    } else {
-      setServiceErr((prev) => {
         return tempErr;
       });
     }
@@ -615,7 +594,7 @@ export default function Pricing() {
           </div>
           <div className={styles.contactForm}>
             <div className={`${styles.title}`}>Contact Us</div>
-            <form
+           {success ?<p>Thank you for reaching out. One of our representatine will contact you within 24 Hrs</p> : <form
               className={classes.root}
               noValidate
               autoComplete="off"
@@ -694,7 +673,7 @@ export default function Pricing() {
               >
                 Let's Chat
               </Button>
-            </form>
+            </form>}
           </div>
         </div>
       </section>
