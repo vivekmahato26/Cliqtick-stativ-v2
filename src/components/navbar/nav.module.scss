@@ -1,0 +1,109 @@
+@mixin mq-lg {
+  @media (min-width: 1370px) {
+    @content;
+  }
+}
+@mixin mq-sm {
+  @media (min-width: 500px) {
+    @content;
+  }
+}
+
+.container {
+  position: sticky;
+  top: 0;
+  padding: 0px 41px;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  width: 100%;
+  z-index: 100;
+  .logo {
+    width: 180px;
+    height: auto;
+    padding: 10px 0;
+    @include mq-sm {
+      width: 228px;
+    }
+  }
+  .spacer {
+    flex-grow: 1;
+  }
+
+  .linkContainer {
+    list-style: none;
+    display: none;
+    @include mq-sm {
+      display: flex;
+    }
+    align-items: center;
+    margin: 0;
+    margin-right: 40px;
+    cursor: pointer;
+    li {
+      text-align: center;
+      font-family: "Futura Bold";
+      font-size: 16px;
+      padding: 0 40px;
+      text-decoration: none;
+      color: #000;
+    }
+    a {
+      text-decoration: none;
+    }
+  }
+  .relative {
+    position: relative;
+  }
+}
+
+.active {
+  position: absolute;
+  width: 110px;
+  height: 60px;
+  background-color: #55c6f2;
+  left: 2.5vw;
+  top: -30px;
+  border-radius: 0 0 10px 10px;
+  z-index: -1;
+  transition: left 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  display: none;
+  @include mq-sm {
+    display: block;
+  }
+  @include mq-lg{
+    left: 2vw
+  }
+}
+
+.active::after {
+  content: "";
+  position: absolute;
+  display: none;
+  @include mq-sm {
+    display: block;
+  }
+  top: 0;
+  border: 15px solid #55c6f2;
+  right: -13px;
+  z-index: -1;
+  border-radius: 0 0 5px;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-bottom-left-radius: 10px;
+}
+
+.active::before {
+  content: "";
+  position: absolute;
+  display: none;
+  @include mq-sm {
+    display: block;
+  }
+  top: 0;
+  border: 15px solid #55c6f2;
+  left: -15px;
+  z-index: -1;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+}

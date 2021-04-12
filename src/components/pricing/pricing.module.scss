@@ -1,0 +1,301 @@
+@mixin mq-sm {
+  @media (min-width: 500px) {
+    @content;
+  }
+}
+
+.hero {
+  width: 100%;
+  .container {
+    text-align: center;
+  }
+  h2 {
+    margin: 0;
+    font-family: "Futura Bold";
+    font-size: 20px;
+    font-weight: 500;
+    @include mq-sm {
+      font-size: 35px;
+    }
+  }
+  div {
+    margin-top: 35px;
+    p {
+      margin: 0;
+      font-family: "Futura Bold";
+      font-size: 15px;
+      font-weight: 300;
+      color: #313131;
+      @include mq-sm {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+.pricing {
+  background-color: #f8f8f8;
+  .container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: block;
+    justify-content: center;
+    @include mq-sm {
+      display: flex;
+    }
+    .price {
+      margin: 0 80px;
+      width: 250px;
+      position: relative;
+      background-color: #fff;
+      padding: 5px;
+      margin-bottom: 20px;
+      @include mq-sm {
+        width: 350px;
+        margin: 0 50px;
+        margin-bottom: 0;
+      }
+      .vertical1 {
+        width: 30px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: -30px;
+        background-color: #55c6f2;
+        z-index: 0;
+      }
+      .priceText {
+        position: absolute;
+        background-color: rgb(17, 20, 26);
+        border-radius: 100%;
+        width: 100px;
+        height: 100px;
+        left: -65px;
+        top: 20px;
+        @include mq-sm {
+          width: 130px;
+          height: 130px;
+          left: -80px;
+        }
+        h2 {
+          color: #fff;
+          font-size: 15px;
+          text-align: center;
+          margin: 5px 0;
+          margin-top: 20px;
+          @include mq-sm {
+              font-size: 20px;
+          }
+        }
+        p {
+          text-align: center;
+          color: #fff;
+          margin: 0;
+          font-size: 12px;
+          @include mq-sm {
+              font-size: revert;
+          }
+        }
+      }
+      h2 {
+        margin-top: 55px;
+        color: #55c6f2;
+        font-size: 25px;
+        text-transform: uppercase;
+        margin-bottom: 45px;
+        margin-left: 50px;
+        font-family: "Futura Bold";
+        letter-spacing: 1px;
+        @include mq-sm {
+            font-size: 40px;
+        }
+      }
+      .margin10 {
+        margin: 22px 0;
+      }
+      .item {
+        margin-top: 10px;
+        display: flex;
+        img {
+          width: 20px;
+          height: 20px;
+        }
+        p {
+          margin: 0 10px;
+          font-size: 13px;
+          @include mq-sm {
+              font-size: 16px;
+          }
+        }
+      }
+      .mb22 {
+        margin-bottom: 22px;
+      }
+      .bookNow {
+        color: #fff;
+        background-color: #55c6f2;
+        padding: 10px 15px;
+        text-align: center;
+        border-radius: 10px;
+        max-width: max-content;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+.faq {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  .container {
+    max-width: 750px;
+    h2 {
+      font-family: "Futura Bold";
+      font-weight: 500;
+      font-size: 20px;
+      background-color: #55c6f2;
+      color: #fff;
+      border-radius: 10px;
+      padding: 10px 20px;
+      max-width: max-content;
+      margin: 30px auto 25px auto;
+      @include mq-sm {
+          font-size: 30px;
+      }
+    }
+    .faqContainer {
+      box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      .question {
+        position: relative;
+        align-items: center;
+        background-color: #e7e7e7;
+        padding: 8px 15px;
+        text-align: center;
+        p {
+          margin: 0;
+          font-family: "Futura Bold";
+          font-weight: 500;
+          font-size: 15px;
+          @include mq-sm {
+              font-size: 25px;
+          }
+        }
+        img {
+          position: absolute;
+          width: 15px;
+          height: 10px;
+          right: 20px;
+          top: 40%;
+          @include mq-sm {
+            width: 20px;
+            height: 15px;
+          }
+        }
+      }
+    }
+    .answer {
+      margin-top: 0;
+      margin-bottom: 25px;
+      box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, 0.3);
+      padding: 10px;
+      transform: scale(0);
+      transition: transform 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+      p {
+          font-size: 12px;
+          @include mq-sm {
+              font-size: 16px;
+          }
+      }
+    }
+    .scale1 {
+      transform: scale(1) !important;
+      max-height: max-content;
+    }
+    .scale0 {
+      transform: scale(0) !important;
+      max-height: 0;
+    }
+  }
+}
+
+.contact {
+  width: 100%;
+  .container {
+    padding: 0 40px;
+    display: block;
+    @include mq-sm {
+        display: flex;
+    }
+    .address {
+      width: 100%;
+      @include mq-sm {
+          width: 50%;
+      }
+      .title {
+        font-family: "Futura Medium";
+        font-size: 20px;
+        margin-bottom: 25px;
+        @include mq-sm {
+            font-size: 30px;
+        }
+      }
+      .flexContainer {
+        display: flex;
+        margin: 0;
+        margin-bottom: 15px;
+        .img {
+          width: 30px;
+          margin: 0;
+        }
+        span {
+          .contactText {
+            margin: 0;
+            margin-left: 20px;
+            font-family: "Futura Medium";
+            font-size: 15px;
+            @include mq-sm {
+                font-size: 20px;
+            }
+          }
+        }
+        .contactText {
+          margin: 0;
+          margin-left: 20px;
+          font-family: "Futura Medium";
+          font-size: 15px;
+          @include mq-sm {
+              font-size: 20px;
+          }
+        }
+      }
+      .flexBox {
+        display: flex;
+        margin-left: 30px;
+        img {
+          width: 30px;
+          margin-left: 10px;
+        }
+      }
+    }
+    .contactForm {
+      width: 100%;
+      @include mq-sm {
+          width: 50%;
+      }
+      display: block;
+      .title {
+        font-family: "Futura Medium";
+        font-size: 20px;
+        margin-bottom: 25px;
+        @include mq-sm {
+            font-size: 30px;
+        }
+      }
+      form {
+        display: block;
+      }
+    }
+  }
+}
