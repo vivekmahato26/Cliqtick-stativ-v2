@@ -5,6 +5,7 @@ import smoothscroll from 'smoothscroll-polyfill';
 import Navbar from "./components/navbar";
 import Home from "./components/home";
 import Pricing from "./components/pricing";
+import Footer from "./components/footer";
 
 import { ScrollContext } from "./components/context";
 import { useRef } from "react";
@@ -22,6 +23,7 @@ function App() {
           <Navbar />
           <Route exact path="/" component={Home} />
           <Route path="/pricing" component={Pricing} />
+          <Footer/>
         </ScrollContext.Provider>
       </Router>
     </div>

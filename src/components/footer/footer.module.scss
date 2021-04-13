@@ -1,0 +1,80 @@
+@mixin mq-sm {
+    @media (min-width: 500px) {
+      @content;
+    }
+  }
+  
+  .marginLRAuto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .flexBox {
+    display: flex;
+    margin-top: 0;
+    @include mq-sm {
+      margin-top: 5px;
+    }
+  }
+  
+  .heading {
+    font-size: 18px; 
+    @include mq-sm {
+      font-size: 25px;
+    }
+  }
+  
+  .midCol {
+    padding: 12px 0;
+    @include mq-sm {
+      padding: 0.75rem;
+    }
+  }
+  
+  .socialImg {
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;
+    @include mq-sm {
+      width: 30px;
+      height: 30px;
+    }
+  
+  }
+  
+  .container {
+    background-color: #f0f0f0;
+    color: #000;
+    margin: 0;
+    font-family: 'Futura Medium';
+    font-size: 12px;
+    @include mq-sm {
+     
+      font-size: 20px;
+    }
+  }
+  
+  .anchor {
+    a {
+      color: #000;
+      text-decoration: none;
+  
+    }
+    a:hover {
+      color: #0071bc;
+    }
+  }
+
+  .columns {
+      display: block;
+      @include mq-sm {
+          display: flex;
+          justify-content: space-evenly;
+      }
+      .column1 {
+          width: 100%;
+          @include mq-sm {
+              width: 35%;
+          }
+      }
+  }

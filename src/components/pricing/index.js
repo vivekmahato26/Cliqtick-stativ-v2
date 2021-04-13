@@ -7,7 +7,7 @@ import MenuItem from "@material-ui/core/MenuItem";
 import FormHelperText from "@material-ui/core/FormHelperText";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
-import {ScrollContext} from "../context";
+import { ScrollContext } from "../context";
 import styles from "./pricing.module.scss";
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -23,15 +23,15 @@ const useStyles = makeStyles((theme) => ({
   },
   mr5: {
     marginRight: "5px",
-    width: "50ch"
+    width: "50ch",
   },
   ml5: {
     marginLeft: "5px",
-    width: "50ch"
-  }
+    width: "50ch",
+  },
 }));
 export default function Pricing() {
-  const {contactFormRef} = useContext(ScrollContext)
+  const { contactFormRef } = useContext(ScrollContext);
   const classes = useStyles();
   const [active, setActive] = useState(0);
   const [success, setSuccess] = useState(false);
@@ -57,7 +57,6 @@ export default function Pricing() {
     err: false,
     message: "",
   });
-  
 
   const handleSubmit = () => {
     const temp = {
@@ -399,7 +398,7 @@ export default function Pricing() {
           </div>
           <div className={styles.faqContainer} onClick={() => setActive(4)}>
             <div className={styles.question}>
-              <p>Can I choose my dedicated design team and art director?</p>
+              <p>Can I choose my dedicated design team and project manager?</p>
               <img
                 src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fdrop.png?alt=media&token=0db2857d-4f5b-4884-a17f-b53bfb970d30"
                 alt="arrow"
@@ -415,9 +414,7 @@ export default function Pricing() {
               Our process is designed to eliminate all waste and keep this
               hassle-free for you, our customer. You will work exclusively with
               your dedicated project managers and will not need to have any face
-              time with the dedicated designers. For some subscription plans you
-              will have a monthly meeting with your dedicated art director or
-              creative director.
+              time with the dedicated designers.
             </p>
           </div>
           <div className={styles.faqContainer} onClick={() => setActive(5)}>
@@ -594,86 +591,93 @@ export default function Pricing() {
           </div>
           <div className={styles.contactForm}>
             <div className={`${styles.title}`}>Contact Us</div>
-           {success ?<p>Thank you for reaching out. One of our representatine will contact you within 24 Hrs</p> : <form
-              className={classes.root}
-              noValidate
-              autoComplete="off"
-              ref={formRef}
-            >
-              <div className={classes.flex}>
-                <TextField
-                  className={classes.mr5}
-                  id="fname"
-                  label="First Name"
-                  variant="outlined"
-                  error={fnameErr.err}
-                  name="fname"
-                />
-                <TextField
-                  className={classes.ml5}
-                  id="lname"
-                  label="Last Name"
-                  variant="outlined"
-                  error={lnameErr.err}
-                  name="lname"
-                />
-              </div>
-              <TextField
-                id="email"
-                label="E-Mail"
-                fullWidth={true}
-                variant="outlined"
-                error={emailErr.err}
-                name="email"
-              />
-              <TextField
-                id="phone"
-                label="Phone"
-                fullWidth={true}
-                variant="outlined"
-                error={phoneErr.err}
-                name="phone"
-              />
-              <TextField
-                id="company"
-                label="Company Name"
-                fullWidth={true}
-                variant="outlined"
-                error={companyErr.err}
-                name="company"
-              />
-              <FormControl
-                variant="outlined"
-                className={classes.formControl}
-                fullWidth={true}
+            {success ? (
+              <p>
+                Thank you for reaching out. One of our representatine will
+                contact you within 24 Hrs
+              </p>
+            ) : (
+              <form
+                className={classes.root}
+                noValidate
+                autoComplete="off"
+                ref={formRef}
               >
-                <InputLabel id="service">Service</InputLabel>
-                <Select
-                  labelId="service"
-                  id="demo-simple-select-outlined"
-                  value={service}
-                  onChange={(e) =>
-                    setService((prev) => {
-                      return e.target.value;
-                    })
-                  }
-                  label="Service"
+                <div className={classes.flex}>
+                  <TextField
+                    className={classes.mr5}
+                    id="fname"
+                    label="First Name"
+                    variant="outlined"
+                    error={fnameErr.err}
+                    name="fname"
+                  />
+                  <TextField
+                    className={classes.ml5}
+                    id="lname"
+                    label="Last Name"
+                    variant="outlined"
+                    error={lnameErr.err}
+                    name="lname"
+                  />
+                </div>
+                <TextField
+                  id="email"
+                  label="E-Mail"
+                  fullWidth={true}
+                  variant="outlined"
+                  error={emailErr.err}
+                  name="email"
+                />
+                <TextField
+                  id="phone"
+                  label="Phone"
+                  fullWidth={true}
+                  variant="outlined"
+                  error={phoneErr.err}
+                  name="phone"
+                />
+                <TextField
+                  id="company"
+                  label="Company Name"
+                  fullWidth={true}
+                  variant="outlined"
+                  error={companyErr.err}
+                  name="company"
+                />
+                <FormControl
+                  variant="outlined"
+                  className={classes.formControl}
+                  fullWidth={true}
                 >
-                  <MenuItem value="">
-                    <em>None</em>
-                  </MenuItem>
-                  <MenuItem value={"Level 1"}>Level 1</MenuItem>
-                  <MenuItem value={"Level 2"}>Level 2</MenuItem>
-                </Select>
-              </FormControl>
-              <Button
-                variant="contained"
-                color="primary"
-                onClick={handleSubmit}
-              >
-                Let's Chat
-              </Button>
-            </form>}
+                  <InputLabel id="service">Service</InputLabel>
+                  <Select
+                    labelId="service"
+                    id="demo-simple-select-outlined"
+                    value={service}
+                    onChange={(e) =>
+                      setService((prev) => {
+                        return e.target.value;
+                      })
+                    }
+                    label="Service"
+                  >
+                    <MenuItem value="">
+                      <em>None</em>
+                    </MenuItem>
+                    <MenuItem value={"Level 1"}>Level 1</MenuItem>
+                    <MenuItem value={"Level 2"}>Level 2</MenuItem>
+                  </Select>
+                </FormControl>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  onClick={handleSubmit}
+                >
+                  Let's Chat
+                </Button>
+              </form>
+            )}
           </div>
         </div>
       </section>
