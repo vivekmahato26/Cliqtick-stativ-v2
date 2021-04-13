@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 export default function Pricing() {
-  const { contactFormRef } = useContext(ScrollContext);
+  const { contactFormRef, pricingRef } = useContext(ScrollContext);
   const classes = useStyles();
   const [active, setActive] = useState(0);
   const [success, setSuccess] = useState(false);
@@ -57,6 +57,10 @@ export default function Pricing() {
     err: false,
     message: "",
   });
+
+  const handleBooknow = () => {
+    contactFormRef.current.scrollIntoView({behavior: "smooth"})
+  }
 
   const handleSubmit = () => {
     const temp = {
@@ -214,7 +218,7 @@ export default function Pricing() {
           </div>
         </div>
       </section>
-      <section className={styles.pricing}>
+      <section className={styles.pricing} ref={pricingRef}>
         <div className={styles.container}>
           <div className={styles.price}>
             <div className={styles.vertical1}></div>
@@ -262,7 +266,7 @@ export default function Pricing() {
               />
               <p>24/7 Dedicated Support</p>
             </div>
-            <p className={styles.bookNow}>Book Now</p>
+            <p className={styles.bookNow} onClick={handleBooknow}>Book Now</p>
           </div>
           <div className={styles.price}>
             <div className={styles.vertical1}></div>
@@ -319,7 +323,7 @@ export default function Pricing() {
               />
               <p>24/7 Dedicated Support</p>
             </div>
-            <p className={styles.bookNow}>Book Now</p>
+            <p className={styles.bookNow} onClick={handleBooknow}>Book Now</p>
           </div>
         </div>
       </section>
@@ -372,8 +376,8 @@ export default function Pricing() {
           >
             <p>
               We can help guide you! Just book a call with us and we'll figure
-              it out based on your team's needs as well as your expected design
-              volume and velocity. Let's find the best option, together.
+              it out based on your team's needs. Let's find the best option,
+              together.
             </p>
           </div>
 
@@ -529,9 +533,15 @@ export default function Pricing() {
               <span>
                 <p className={styles.contactText}>Call us: Monday to Friday</p>
                 <p className={styles.contactText}>9:30AM to 6:30PM</p>
-                <p className={styles.contactText}>+1 716 941 4055</p>
-                <p className={styles.contactText}>+44 755 395 9006</p>
-                <p className={styles.contactText}>+91 912 194 7554</p>
+                <p className={styles.contactText}>
+                  <img src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Findia-flag-round-icon-32.png?alt=media&token=4f9185ff-f2f7-4fe3-b222-d1f30a2326ec" alt="IN"/> +91 912 194 7554
+                </p>
+                <p className={styles.contactText}>
+                  <img src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Funited-states-of-america-flag-round-small.png?alt=media&token=6783c5ee-4e0a-4055-8758-304be342e41d" alt="USA"/> +1 716 941 4055
+                </p>
+                <p className={styles.contactText}>
+                  <img src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Funited-kingdom-flag-round-small.png?alt=media&token=7b7b5e84-6d0a-4764-b529-022fb95f0945" alt="UK"/> +44 755 395 9006
+                </p>
               </span>
               <figure
                 className={`image is-32x32 ${styles.marginR5} ${styles.marginT5} ${styles.position}`}

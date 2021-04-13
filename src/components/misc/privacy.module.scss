@@ -1,0 +1,28 @@
+.container {
+    font-family: 'Futura Medium';
+    padding: 0 40px;
+    h1{
+        text-align: center;
+        font-size: 35px;
+        margin-bottom: 25px;
+        color: #0071bc
+    }
+    h2 {
+        color: #0071bc;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        font-size: 20px;
+    }
+    p {
+        font-size: 17px;
+    }
+    ul {
+        list-style: disc;
+        padding-left: 30px;
+    }
+    a {
+        text-decoration: none;
+        cursor: pointer;
+        color: #4a4a4a;
+    }
+}

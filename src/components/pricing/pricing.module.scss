@@ -139,6 +139,7 @@
         border-radius: 10px;
         max-width: max-content;
         margin: 0 auto;
+        cursor: pointer;
       }
     }
   }
@@ -251,12 +252,17 @@
         }
         span {
           .contactText {
-            margin: 0;
+            margin: 5px 0;
             margin-left: 20px;
             font-family: "Futura Medium";
             font-size: 15px;
+            display: flex;
+            align-items: center;
             @include mq-sm {
                 font-size: 20px;
+            }
+            img {
+              width: 30px;
             }
           }
         }

@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+
+import {useLocation} from "react-router-dom";
 
 import styles from "./footer.module.scss";
 
+import {ScrollContext} from "../context";
+
 export default function Footer() {
+  const {pricingRef} = useContext(ScrollContext);
+  const location = useLocation();
+  
+  const handleClick = () => {
+    if(location.pathname === "/pricing") {
+      pricingRef.current.scrollIntoView({behavior: "smooth"})
+    }
+  }
+
   return (
     <>
       <div className={styles.container}>
@@ -20,10 +33,10 @@ export default function Footer() {
                 <p>Copyright © 2021 All Rights Reserved by Teman Analytics.</p>
               </div>
               <div className={`column is-one-fifth ${styles.midCol}`}>
-                <h1 className={styles.heading}>Services</h1>
+                <h1 className={styles.heading}>Useful Links</h1>
                 <ul className={styles.anchor}>
                   <Link offset={-40} to="/pricing" spy={true} smooth={true}>
-                    <li>Pricing</li>
+                    <li onClick={handleClick}>Pricing</li>
                   </Link>
                   <li>
                     <a href="/privacy" target="_blank">
