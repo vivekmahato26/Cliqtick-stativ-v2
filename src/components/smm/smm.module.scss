@@ -1,0 +1,290 @@
+@mixin mq-xs {
+  @media (min-width: 320px) {
+    @content;
+  }
+}
+
+@mixin mq-sm {
+  @media (min-width: 610px) {
+    @content;
+  }
+}
+
+@mixin mq-md {
+  @media (min-width: 770px) {
+    @content;
+  }
+}
+
+@mixin mq-lg {
+  @media (min-width: 1000px) {
+    @content;
+  }
+}
+
+@mixin mq-xl {
+  @media (min-width: 1400px) {
+    @content;
+  }
+}
+@mixin mq-mac {
+  @media (min-width: 1500px) {
+    @content;
+  }
+}
+@mixin mq-xxl {
+  @media (min-width: 1600px) {
+    @content;
+  }
+}
+.hero {
+  width: 100%;
+  .container {
+    width: 100%;
+    background-image: url("https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fcover.jpg?alt=media&token=45fe91e9-f3c3-4a16-b0a1-204334316552");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-height: max-content;
+    display: flex;
+    justify-content: center;
+    .subContainer {
+      text-align: center;
+      margin: 70px 0;
+
+      span {
+        h2 {
+          color: #fff;
+          font-size: 25px;
+          font-family: "Futura Bold";
+          letter-spacing: 3px;
+          .colorY {
+            color: #fcb813;
+          }
+
+          .colorB {
+            color: #55c6f2;
+          }
+
+          .colorG {
+            color: #5cb97c;
+          }
+
+          .colorP {
+            color: #e43e5f;
+          }
+          @include mq-md {
+            font-size: 35px;
+          }
+          @include mq-xl {
+            font-size: 45px;
+          }
+        }
+      }
+      .heroDesc {
+        color: #fff;
+        font-size: 20px;
+        @include mq-md {
+          font-size: 25px;
+        }
+        margin-bottom: 25px;
+        p {
+          margin: 0;
+        }
+      }
+      .flex {
+        display: flex;
+        align-items: center;
+        color: #fff;
+        justify-content: center;
+        .buttonA,
+        .buttonP {
+          padding: 10px;
+          font-family: "FuturaBT";
+          font-size: 20px;
+          color: #fff;
+          cursor: pointer;
+          margin-top: 30px;
+        }
+        .buttonA {
+          background-color: #fcb813;
+        }
+        .buttonA:hover {
+          color: #fff;
+        }
+
+        .buttonP {
+          border: 1px solid #fcb813;
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+}
+
+.smp {
+  width: 100%;
+  background-color: #f3f3f3;
+  .container {
+    padding: 20px 0;
+    @include mq-sm {
+      padding: 20px 40px;
+    }
+    h2 {
+      font-family: "Futura Bold";
+      margin: 0;
+      letter-spacing: 0;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+      color: #0c0c0c;
+      text-transform: uppercase;
+      @include mq-md {
+        letter-spacing: 0.6px;
+        font-size: 35px;
+      }
+      @include mq-xl {
+        font-size: 45px;
+      }
+    }
+    div {
+      display: block;
+      justify-content: center;
+      @include mq-sm {
+        display: flex;
+      }
+      div {
+        display: block;
+        margin-bottom: 10px;
+        background-image: url("https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fsmm%2FCategory%20Shape.png?alt=media&token=05fd8d75-593e-4c13-830b-08eca66dcd04");
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 350px;
+        height: 500px;
+        @include mq-sm {
+          margin-right: 20px;
+          height: 450px;
+          width: 400px;
+        }
+        @include mq-lg {
+          width: 600px;
+          height: 600px;
+        }
+        
+        span {
+          justify-content: center;
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          .mt18 {
+            margin-top: 15%;
+            @include mq-sm {
+              margin-top: 10%;
+            }
+            @include mq-lg{
+              margin-top: 10%;
+            }
+            @include mq-xxl {
+              margin-top: 7%;
+              width: 35%;
+            }
+          }
+          img {
+            margin: 0 auto;
+            margin-top: 8%;
+            @include mq-sm {
+              margin-top: 10%;
+              width: 50%;
+            }
+            @include mq-xl {
+              margin-top: 10%;
+              width: 40%;
+              margin-left: 30%;
+            }
+            @include mq-mac {
+              width: 30%;
+            }
+            @include mq-xxl {
+              img {
+                width: 35%;
+              }
+              margin-top: 8%;
+              margin-left: 20%;
+            }
+          }
+          .cardTitle {
+            font-family: "Futura Bold";
+            font-size: 18px;
+            text-align: center;
+            max-width: 200px;
+            color: #262626;
+            letter-spacing: 0.35px;
+            margin-top: 5%;
+            margin-left: 20%;
+            @include mq-sm {
+              max-width: 150px;
+              font-size: 16px;
+              margin-left: 14%;
+              margin-top: 2%;
+              margin-bottom: 2%;
+            }
+            @include mq-md {
+              font-size: 18px;
+              max-width: 300px;
+            }
+            @include mq-lg {
+              margin-left: 8%;
+            }
+            @include mq-xl {
+              margin-top: 10%;
+              margin-left: 15%;
+            }
+            @include mq-mac {
+              margin-top: 12%;
+              margin-left: 20%;
+            }
+            @include mq-xxl {
+              margin-top: 5%;
+              margin-left: 10%;
+            }
+          }
+        }
+        .cardDescription {
+          font-family: "Futura Medium";
+          font-size: 16px;
+          text-align: center;
+          color: #262626;
+          max-width: 240px;
+          letter-spacing: 0.35px;
+          margin-top: 0;
+          margin-left: 15%;
+          @include mq-sm {
+            max-width: 150px;
+            font-size: 10px;
+            margin-left: 16%;
+          }
+          @include mq-md {
+            max-width: 300px;
+            font-size: 20px;
+          }
+          @include mq-lg {
+            font-size: 15px;
+            max-width: 70%;
+          }
+          @include mq-xl {
+            max-width: 65%;
+            font-size: 20px;
+          }
+          @include mq-mac {
+            max-width: 70%;
+          }
+          @include mq-xxl {
+            max-width: 45%;
+            font-size: 19px;
+            margin-left: 12%;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,88 @@
+@mixin mq-md {
+    @media (min-width: 770px) {
+      @content;
+    }
+  }
+  @mixin mq-sm {
+    @media (min-width: 610px) {
+      @content;
+    }
+  }
+  @mixin mq-xl {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }
+.process {
+    width: 100%;
+    .container {
+        width: 100%;
+        padding: 40px;
+        h2 {
+            font-family: "Futura Bold";
+            font-size: 25px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-align: center;
+            @include mq-md {
+                font-size: 35px;
+            }
+            @include mq-xl {
+                font-size: 45px;
+            }
+        }
+        .subContainer {
+            max-width: 900px;
+            margin: 30px auto;
+            display: block;
+            border-radius: 50px;
+            border: 3px solid #4bc6f3;
+            padding: 25px;
+            align-items: center;
+            text-align: center;
+            @include mq-sm {
+                display: flex;
+            }
+            @include mq-md {
+                text-align: start;
+            }
+            img {
+                width: 50%;
+                height: auto;
+                @include mq-md {
+                    width: 25%;
+                }
+            }
+            .verticalLine {
+                background-color: #4bc6f3;
+                width: 1px;
+                border: 1.5px solid #4bc6f3;
+                height: 200px;
+                margin: 0 30px;
+                display: none;
+                @include mq-sm {
+                    display: block;
+                }
+            }
+            .content {
+                border-top: 3px solid #4bc6f3;
+                @include mq-sm {
+                    border-top: none;
+                }
+                display: block;
+                .title {
+                    font-family: "Futura Bold";
+                    font-size: 15px;
+                    text-transform: uppercase;
+                    letter-spacing: 0.3px;
+                }
+                .desc {
+                    font-family: "Futura Medium";
+                    font-size: 15px;
+                    letter-spacing: 0.3px;
+                    margin-top: 25px;
+                }
+            }
+        }
+    }
+}

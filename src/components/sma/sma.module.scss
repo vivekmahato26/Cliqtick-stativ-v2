@@ -1,0 +1,153 @@
+@mixin mq-md {
+  @media (min-width: 770px) {
+    @content;
+  }
+}
+@mixin mq-xl {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin mq-sm {
+  @media (min-width: 610px) {
+    @content;
+  }
+}
+
+.hero {
+  width: 100%;
+  .container {
+    width: 100%;
+    background-image: url("https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fcover.jpg?alt=media&token=45fe91e9-f3c3-4a16-b0a1-204334316552");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-height: max-content;
+    display: flex;
+    justify-content: center;
+    .subContainer {
+      text-align: center;
+      margin: 100px 0;
+
+      span {
+        h2 {
+          color: #fff;
+          font-size: 25px;
+          font-family: "Futura Bold";
+          letter-spacing: 3.5px;
+          text-transform: uppercase;
+          @include mq-md {
+            font-size: 35px;
+          }
+          @include mq-xl {
+            font-size: 45px;
+          }
+        }
+      }
+      .heroDesc {
+        color: #fff;
+        font-size: 20px;
+        margin-bottom: 25px;
+        font-family: "Futura Light";
+        @include mq-md {
+          font-size: 23px;
+        }
+        p {
+          margin: 0;
+        }
+      }
+      .flex {
+        display: flex;
+        align-items: center;
+        color: #fff;
+        justify-content: center;
+
+        .buttonP {
+          padding: 10px;
+          font-family: "Futura Bold";
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          font-size: 18px;
+          color: #fcb813;
+          cursor: pointer;
+          margin-top: 30px;
+          border: 1px solid #fff;
+          margin-left: 20px;
+          border-radius: 30px;
+          @include mq-md {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.smp {
+  width: 100%;
+  .container {
+    padding: 20px 40px;
+    h2 {
+      font-family: "Futura Bold";
+      font-size: 20px;
+      text-align: center;
+      margin: 0;
+      color: #000;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      @include mq-md {
+        font-size: 35px;
+      }
+      @include mq-xl {
+        font-size: 45px;
+      }
+    }
+    div {
+      display: block;
+      justify-content: center;
+      margin: 20px 0;
+      @include mq-sm {
+        display: flex;
+      }
+      div {
+        display: block;
+        padding: 10px 10px 10px 10px;
+        border-radius: 20px;
+        box-shadow: 1.4px 2.7px 7px 0 rgba(0, 0, 0, 0.2);
+        margin-bottom: 10px;
+        margin-right: 20px;
+        background-color: #2680d2; /* For browsers that do not support gradients */
+        background-image: linear-gradient(to bottom right, #2680d2, #8eedf7);
+        width: 250px;
+        height: 300px;
+        max-width: 250px;
+        @include mq-md {
+          height: 350px;
+        }
+        span {
+          justify-content: center;
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          img {
+            margin: 40px 0;
+            width: 180px;
+            margin: 0 auto;
+          }
+          .cardTitle {
+            font-family: "Futura Medium";
+            margin-bottom: 25px;
+            font-size: 25px;
+            color: rgb(255, 255, 255);
+          }
+        }
+        .cardDescription {
+          font-family: "Nunito";
+          font-size: 20px;
+          color: rgb(66, 66, 66);
+        }
+      }
+    }
+  }
+}

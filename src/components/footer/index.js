@@ -30,13 +30,15 @@ export default function Footer() {
                   design and write content for businesses to make their social
                   media pages interactive and engaging with their customers.
                 </p>
-                <p>Copyright © 2021 All Rights Reserved by Teman Analytics.</p>
               </div>
               <div className={`column is-one-fifth ${styles.midCol}`}>
                 <h1 className={styles.heading}>Useful Links</h1>
                 <ul className={styles.anchor}>
-                  <Link offset={-40} to="/pricing" spy={true} smooth={true}>
-                    <li onClick={handleClick}>Pricing</li>
+                  <Link offset={-40} to="/social-media-management" spy={true} smooth={true}>
+                    <li onClick={handleClick}>Social media management</li>
+                  </Link>
+                  <Link offset={-40} to="/advertising" spy={true} smooth={true}>
+                    <li onClick={handleClick}>Social media advertising</li>
                   </Link>
                   <li>
                     <a href="/privacy" target="_blank">
@@ -57,9 +59,9 @@ export default function Footer() {
               </div>
               <div className="column">
                 <h1 className={styles.heading}>Contact Us</h1>
-                <p>Door No. 32-10-8 Sheelanagar</p>
-                <p>Venkateswara colony, Street no. 8</p>
-                <p>VSKP, Andhra Pradesh, India - 530012</p>
+                <p className={styles.addr}>Door No. 32-10-8 Sheelanagar</p>
+                <p className={styles.addr}>Venkateswara colony, Street no. 8</p>
+                <p className={styles.addr}>VSKP, Andhra Pradesh, India - 530012</p>
                 <span className={styles.flexBox}>
                   <a
                     href="https://www.facebook.com/cliqtickmarketing"
@@ -111,6 +113,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
+        <p className={styles.copyright}>Copyright © 2021 All Rights Reserved by Teman Analytics.</p>
     </>
   );
 }

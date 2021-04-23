@@ -1,80 +1,112 @@
 @mixin mq-sm {
-    @media (min-width: 500px) {
-      @content;
-    }
+  @media (min-width: 500px) {
+    @content;
   }
-  
-  .marginLRAuto {
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  .flexBox {
-    display: flex;
-    margin-top: 0;
-    @include mq-sm {
-      margin-top: 5px;
-    }
-  }
-  
-  .heading {
-    font-size: 18px; 
-    @include mq-sm {
-      font-size: 25px;
-    }
-  }
-  
-  .midCol {
-    padding: 12px 0;
-    @include mq-sm {
-      padding: 0.75rem;
-    }
-  }
-  
-  .socialImg {
-    width: 25px;
-    height: 25px;
-    margin-right: 5px;
-    @include mq-sm {
-      width: 30px;
-      height: 30px;
-    }
-  
-  }
-  
-  .container {
-    background-color: #f0f0f0;
-    color: #000;
-    margin: 0;
-    font-family: 'Futura Medium';
-    font-size: 12px;
-    @include mq-sm {
-     
-      font-size: 20px;
-    }
-  }
-  
-  .anchor {
-    a {
-      color: #000;
-      text-decoration: none;
-  
-    }
-    a:hover {
-      color: #0071bc;
-    }
-  }
+}
 
-  .columns {
-      display: block;
-      @include mq-sm {
-          display: flex;
-          justify-content: space-evenly;
-      }
-      .column1 {
-          width: 100%;
-          @include mq-sm {
-              width: 35%;
-          }
-      }
+@mixin mq-md {
+  @media (min-width: 770px) {
+    @content;
   }
+}
+
+.marginLRAuto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.flexBox {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 4%;
+  @include mq-md {
+    justify-content: flex-end;
+    margin-top: 20%;
+  }
+}
+
+.heading {
+  font-size: 18px;
+  @include mq-sm {
+    font-size: 25px;
+  }
+}
+
+.midCol {
+  padding: 12px 0;
+  @include mq-sm {
+    padding: 0.75rem;
+  }
+}
+
+.socialImg {
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+  @include mq-sm {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+.container {
+  background-color: #c3c3c3;
+  color: #494949;
+  margin: 0;
+  font-family: "Futura Medium";
+  font-size: 12px;
+  padding: 5px 10px;
+  @include mq-sm {
+    padding: revert;
+
+    font-size: 20px;
+  }
+}
+
+.heading {
+  font-family: "Futura Bold";
+  text-transform: uppercase;
+}
+
+.anchor {
+  list-style: none;
+  padding: 0;
+  li {
+    margin: 10px auto;
+  }
+  a {
+    color: #494949;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #0071bc;
+  }
+}
+
+.columns {
+  display: block;
+  @include mq-sm {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .column1 {
+    width: 100%;
+    @include mq-sm {
+      width: 35%;
+    }
+  }
+}
+.addr {
+  margin: 0;
+}
+
+.copyright {
+  text-align: center;
+  font-family: "Futura Medium";
+  font-size: 15px;
+  letter-spacing: 0.25px;
+  background-color: #545454;
+  color: #fff;
+  margin: 0;
+  padding: 10px;
+}

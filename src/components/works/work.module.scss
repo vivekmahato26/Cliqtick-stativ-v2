@@ -1,0 +1,88 @@
+@mixin mq-xs {
+    @media (min-width: 320px) {
+      @content;
+    }
+  }
+  
+  @mixin mq-sm {
+    @media (min-width: 610px) {
+      @content;
+    }
+  }
+  
+  @mixin mq-md {
+    @media (min-width: 770px) {
+      @content;
+    }
+  }
+  
+  @mixin mq-lg {
+    @media (min-width: 1100px) {
+      @content;
+    }
+  }
+  
+  @mixin mq-xl {
+    @media (min-width: 1400px) {
+      @content;
+    }
+  }
+
+.hero {
+    width: 100%;
+    .container {
+        width: 100%;
+        text-align: center;
+        color: #0c0c0c;
+        text-transform: uppercase;
+        h2 {
+            font-family: "Futura Bold";
+            font-size: 25px;
+            margin-top: 5%;
+            margin-bottom: 25px;
+            letter-spacing: 0.6px;
+            @include mq-md {
+                font-size: 35px;
+            }
+        }
+        p{
+            margin: 0;
+            font-family: "Futura Bold";
+            font-size: 18px;
+            letter-spacing: 0.3px;
+            @include mq-md {
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+.work {
+    width: 100%;
+    .container {
+        width: 100%;
+        padding: 20px 40px;
+        .tabContainer {
+            list-style: none;
+            display: block;
+            justify-content: space-evenly;
+            @include mq-md {
+                display: flex;
+            }
+            li {
+                padding: 10px 30px;
+                border-radius: 5px;
+                font-family: "Futura Bold";
+                font-size: 25px;
+                text-transform: uppercase;
+                @include mq-md {
+                    font-size: 30px;
+                }
+            }
+            .active {
+                background-color: #55c6f2;
+                color: #fff;
+            }
+        }
+    }
+}

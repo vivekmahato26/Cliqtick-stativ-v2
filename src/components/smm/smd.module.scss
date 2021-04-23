@@ -1,0 +1,556 @@
+@mixin mq-xs {
+  @media (min-width: 320px) {
+    @content;
+  }
+}
+
+@mixin mq-sm {
+  @media (min-width: 500px) {
+    @content;
+  }
+}
+
+@mixin mq-md {
+  @media (min-width: 770px) {
+    @content;
+  }
+}
+
+@mixin mq-lg {
+  @media (min-width: 1000px) {
+    @content;
+  }
+}
+
+@mixin mq-lap {
+  @media (min-width: 1300px) {
+    @content;
+  }
+}
+
+@mixin mq-mdpi {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin mq-xl {
+  @media (min-width: 1400px) {
+    @content;
+  }
+}
+@mixin mq-mac {
+  @media (min-width: 1500px) {
+    @content;
+  }
+}
+@mixin mq-xxl {
+  @media (min-width: 1800px) {
+    @content;
+  }
+}
+.smd {
+  width: 100%;
+  height: 2700px;
+  @include mq-md {
+    height: auto;
+  }
+  .container {
+    h2 {
+      font-family: "Futura Bold";
+      font-size: 25px;
+      text-align: center;
+      @include mq-sm {
+        font-size: 30px;
+      }
+      @include mq-md {
+        font-size: 45px;
+      }
+    }
+    .subContainer {
+      div {
+        display: block;
+        .subContainer1 {
+          .content {
+            position: absolute;
+            height: 350px;
+            width: 250px;
+            z-index: -1;
+            left: 15%;
+            top: 35%;
+            text-align: center;
+            .subtitle,
+            .description {
+              margin-left: auto;
+              @include mq-md {
+                margin-left: 15%;
+              }
+              @include mq-lg {
+                margin-left: 25%;
+              }
+              @include mq-mac {
+                margin-left: 20%;
+              }
+            }
+            .subtitle {
+              margin-top: 35%;
+              @include mq-md {
+                margin-top: revert;
+              }
+            }
+            @include mq-md {
+              top: 35%;
+              text-align: start;
+            }
+            .button {
+              font-family: "Futura Medium";
+              font-size: 18px;
+              letter-spacing: 0.53px;
+              text-align: center;
+              color: #fefefe;
+              background-color: #55c6f2;
+              margin-left: 0%;
+              border: 1px solid #55c6f2;
+              padding: 10px 25px;
+              border-radius: 30px;
+              box-shadow: 1px 2px 2px 1px #00000070;
+              @include mq-md {
+                font-size: 20px;
+                margin-left: 75%;
+              }
+              @include mq-xl {
+                margin-left: 75%;
+              }
+            }
+            .button:hover {
+              background-color: #0071bc;
+            }
+            @include mq-md {
+              left: 25%;
+              top: 5%;
+              height: 250px;
+              width: 750px;
+            }
+            @include mq-lg {
+              left: 25%;
+              top: 5%;
+              width: 750px;
+            }
+            @include mq-xl {
+              left: 30%;
+              top: 5%;
+            }
+            @include mq-xxl {
+              width: 900px;
+            }
+          }
+          .img {
+            position: absolute;
+            border-radius: 50%;
+            background-color: #fff;
+            left: 19%;
+            width: 225px;
+            height: 225px;
+            top: -7%;
+            img {
+              width: 100%;
+            }
+            @include mq-md {
+              left: 2%;
+              top: -1%;
+              height: max-content;
+              width: max-content;
+            }
+            @include mq-lg {
+              left: 10%;
+              top: 0%;
+            }
+            @include mq-xl {
+              left: 20%;
+              top: 0%;
+            }
+          }
+        }
+        .subContainer2 {
+          text-align: center;
+          @include mq-md {
+            text-align: start;
+          }
+          .content {
+            position: absolute;
+            height: 400px;
+            width: 250px;
+            z-index: -1;
+            left: 15%;
+            top: 75%;
+            .subtitle,
+            .description {
+              margin-right: 15%;
+              margin-left: 5%;
+              @include mq-md {
+                margin-right: 25%;
+              }
+              @include mq-lg {
+                margin-right: 30%;
+              }
+              
+              @include mq-mac {
+                margin-right: 20%;
+              }
+            }
+            .subtitle {
+              margin-top: 40%;
+              @include mq-md {
+                margin-top: 5%;
+              }
+            }
+            @include mq-md {
+              top: 15%;
+              left: 2%;
+              width: 750px;
+              height: 250px;
+            }
+            @include mq-lg {
+              left: 10%;
+              top: 5%;
+              width: 750px;
+            }
+            @include mq-xl {
+              left: 20%;
+              top: 5%;
+            }
+            @include mq-xxl {
+              width: 900px;
+            }
+          }
+          .img {
+            position: absolute;
+            border-radius: 50%;
+            background-color: #fff;
+            left: 19%;
+            width: 225px;
+            height: 225px;
+            top: 40%;
+            img {
+              width: 100%;
+            }
+           
+            @include mq-md {
+              left: auto;
+              top: -1%;
+              height: max-content;
+              width: max-content;
+              right: 2%;
+            }
+            @include mq-lg {
+              right: 8%;
+              top: 0%;
+            }
+            @include mq-mdpi {
+              right: 15%;
+            }
+            @include mq-xl {
+              right: 22%;
+              top: 0%;
+            }
+            @include mq-lap {
+              right: 18%;
+            }
+            @include mq-mac {
+              right: 10%;
+            }
+            @include mq-xxl {
+              right: 22%;
+            }
+          }
+        }
+        .subContainer3 {
+          text-align: center;
+          @include mq-md {
+            text-align: start;
+          }
+          .content {
+            position: absolute;
+            height: 400px;
+            width: 250px;
+            z-index: -1;
+            left: 30%;
+            left: 15%;
+            top: 5%;
+            top: 135%;
+            .subtitle,
+            .description {
+              margin-left: 0%;
+              @include mq-md {
+                margin-left: 28%;
+              }
+             
+              @include mq-mac {
+                margin-left: 20%;
+              }
+            }
+            .subtitle {
+              margin-top: 35%;
+              @include mq-md {
+                margin-top: 5%;
+              }
+            }
+            @include mq-md {
+              left: 10%;
+              height: 250px;
+              width: 750px;
+            }
+            @include mq-lg {
+              left: 25%;
+              top: 5%;
+              width: 750px;
+            }
+            @include mq-xl {
+              left: 30%;
+              top: 5%;
+            }
+            @include mq-xxl {
+              width: 900px;
+            }
+          }
+          .img {
+            position: absolute;
+            border-radius: 50%;
+            background-color: #fff;
+            left: 19%;
+            width: 225px;
+            height: 225px;
+            top: 95%;
+            img {
+              width: 100%;
+            }
+            @include mq-md {
+              left: 20%;
+              top: 0%;
+              height: max-content;
+              width: max-content;
+            }
+            @include mq-md {
+              left: 2%;
+            }
+            @include mq-lg {
+              left: 10%;
+              top: 0%;
+            }
+            @include mq-xl {
+              left: 20%;
+              top: 0%;
+            }
+          }
+        }
+        .subContainer4 {
+          text-align: center;
+          @include mq-md {
+            text-align: start;
+          }
+          .content {
+            position: absolute;
+            height: 350px;
+            width: 250px;
+            z-index: -1;
+            left: 20%;
+            left: 15%;
+            top: 200%;
+            .subtitle,
+            .description {
+              margin-right: 15%;
+              margin-left: 5%;
+              @include mq-mdpi {
+                margin-right: 20%;
+              }
+              @include mq-md {
+                margin-right: 28%;
+              }
+              
+            }
+            .subtitle {
+              margin-top: 30%;
+              @include mq-md {
+                margin-top: 5%;
+              }
+            }
+            @include mq-md {
+              top: 5%;
+              left: 2%;
+              height: 250px;
+              width: 750px;
+            }
+            @include mq-lg {
+              left: 10%;
+              top: 5%;
+              width: 750px;
+            }
+            @include mq-xl {
+              left: 20%;
+              top: 5%;
+            }
+            @include mq-xxl {
+              width: 900px;
+            }
+          }
+          .img {
+            position: absolute;
+            border-radius: 50%;
+            background-color: #fff;
+            left: 19%;
+            width: 225px;
+            height: 225px;
+            top: 155%;
+            img {
+              width: 100%;
+            }
+            
+            @include mq-md {
+              left: auto;
+              right: 2%;
+              top: 0%;
+              height: max-content;
+              width: max-content;
+            }
+            
+            @include mq-lg {
+              right: 8%;
+              top: 0%;
+            }
+            @include mq-mdpi {
+              right: 15%;
+            }
+            @include mq-xl {
+              right: 22%;
+              top: 0%;
+            }
+            @include mq-lap {
+              right: 18%;
+            }
+            @include mq-mac {
+              right: 10%;
+            }
+            @include mq-xxl {
+              right: 22%;
+            }
+          }
+        }
+        .subContainer5 {
+          text-align: center;
+          @include mq-md {
+            text-align: start;
+          }
+          .content {
+            position: absolute;
+            height: 300px;
+            width: 250px;
+            z-index: -1;
+            left: 15%;
+            top: 250%;
+            .subtitle {
+              margin-left: auto;
+              margin-top: 30%;
+              @include mq-md {
+                margin-left: 28%;
+                margin-top: 11%;
+              }
+            }
+            display: block;
+            .button {
+              font-family: "Futura Medium";
+              font-size: 26.5px;
+              letter-spacing: 0.53px;
+              text-align: left;
+              color: #fefefe;
+              background-color: #55c6f2;
+              border: 1px solid #55c6f2;
+              padding: 10px 25px;
+              border-radius: 30px;
+              box-shadow: 1px 2px 2px 1px #00000070;
+              height: fit-content;
+              margin-top: 10%;
+              margin-left: 5%;
+            }
+            @include mq-md {
+              display: flex;
+              top: 5%;
+              left: 10%;
+              height: 250px;
+              width: 750px;
+            }
+            @include mq-lg {
+              left: 25%;
+              top: 5%;
+              width: 750px;
+            }
+            @include mq-xl {
+              left: 30%;
+              top: 5%;
+            }
+            @include mq-xxl {
+              width: 900px;
+            }
+          }
+          .img {
+            position: absolute;
+            border-radius: 50%;
+            background-color: #fff;
+            left: 19%;
+            width: 225px;
+            height: 225px;
+            top: 205%;
+            img {
+              width: 100%;
+            }
+            @include mq-md {
+              left: 2%;
+              right: auto;
+              top: 0%;
+              height: max-content;
+              width: max-content;
+            }
+            @include mq-lg {
+              left: 10%;
+            }
+            @include mq-xl {
+              left: 20%;
+            }
+          }
+        }
+
+        .subContainer1,
+        .subContainer2,
+        .subContainer3,
+        .subContainer4,
+        .subContainer5 {
+          position: relative;
+          height: 350px;
+          div {
+            border: 3px solid #55c6f2;
+          }
+          .content {
+            .subtitle {
+              font-family: "Futura Bold";
+              font-size: 20px;
+              letter-spacing: 0.6px;
+              color: #41b6e4;
+              text-transform: uppercase;
+              @include mq-md {
+                font-size: 30px;
+              }
+            }
+            .description {
+              font-family: "Futura Medium";
+              font-size: 18px;
+              letter-spacing: 0.3px;
+              color: #262626;
+              @include mq-md {
+                font-size: 20px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

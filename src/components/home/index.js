@@ -1,14 +1,16 @@
 import React, { useContext } from "react";
 
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+
+import Pricing from "../pricing";
 
 import styles from "./home.module.scss";
 
-import {ScrollContext} from "../context";
+import { ScrollContext } from "../context";
 
-import {useHistory} from "react-router-dom";
+import { Link} from "react-router-dom";
 
 const reviews = [
   {
@@ -51,10 +53,9 @@ export default function Home() {
     arrows: true,
     autoplay: true,
     autoplaySpeed: 2000,
-    pauseOnHover: true
+    pauseOnHover: true,
   };
-  const {homeRef, workRef, contactRef} = useContext(ScrollContext);
-  let history = useHistory();
+  const { homeRef, workRef } = useContext(ScrollContext);
   return (
     <>
       <section className={styles.hero} id="hero" ref={homeRef}>
@@ -128,7 +129,7 @@ export default function Home() {
             </p>
           </span>
           <div>
-          <video
+            <video
               className={styles.video}
               about="Cliqtick Introduction"
               controls={false}
@@ -213,7 +214,9 @@ export default function Home() {
               <div className={styles.textContainer}>
                 <h3>Social Media</h3>
                 <h3>Designs</h3>
-                <p>View More</p>
+                <Link to={{pathname:"/our-work",category:"smm"}}>
+                  <p>View More</p>
+                </Link>
               </div>
               <div className={styles.whiteSpace}></div>
             </div>
@@ -225,7 +228,9 @@ export default function Home() {
               <div className={styles.textContainer}>
                 <h3>Motion Graphics</h3>
                 <h3>Work</h3>
-                <p>View More</p>
+                <Link to={{pathname:"/our-work",category:"motion"}}>
+                  <p>View More</p>
+                </Link>
               </div>
               <div className={styles.whiteSpace}></div>
             </div>
@@ -238,7 +243,9 @@ export default function Home() {
               />
               <div className={styles.textContainer}>
                 <h3>Video Works</h3>
-                <p className={styles.videoWorks}>View More</p>
+                <Link to={{pathname:"/our-work",category:"video"}}>
+                  <p className={styles.videoWorks}>View More</p>
+                </Link>
               </div>
               <div className={styles.whiteSpace}></div>
             </div>
@@ -257,13 +264,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className={styles.contact} id="contact" ref={contactRef}>
-        <div className={styles.container}>
-          <h2>Faster than hring</h2>
-          <h2>Cheaper than freelancers and agencies</h2>
-          <p className={styles.button} onClick={() => history.push("/pricing")}>Get Started</p>
-        </div>
-      </section>
+      <Pricing />
     </>
   );
 }

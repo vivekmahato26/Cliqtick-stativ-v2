@@ -9,6 +9,12 @@
   }
 }
 
+@mixin mq-md {
+  @media (min-width: 770px) {
+    @content;
+  }
+}
+
 .container {
   position: sticky;
   top: 0;
@@ -22,6 +28,7 @@
     width: 180px;
     height: auto;
     padding: 10px 0;
+    cursor: pointer;
     @include mq-sm {
       width: 228px;
     }
@@ -47,6 +54,10 @@
       padding: 0 40px;
       text-decoration: none;
       color: #000;
+      @include mq-md {
+        padding: 0 15px;
+
+      }
     }
     a {
       text-decoration: none;
@@ -71,9 +82,14 @@
   @include mq-sm {
     display: block;
   }
-  @include mq-lg{
-    left: 2vw
+  @include mq-md {
+    width: 100px;
+    left: 2vw;
   }
+  @include mq-lg {
+    left: 1.5vw;
+  }
+ 
 }
 
 .active::after {
@@ -106,4 +122,59 @@
   z-index: -1;
   border-left-color: transparent;
   border-bottom-color: transparent;
+}
+
+.navItem {
+  text-align: center;
+  font-family: "Futura Bold";
+  font-size: 16px;
+  padding: 0 40px;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.service {
+  position: relative;
+  
+}
+.serviceItem {
+  position: absolute;
+  transform: scale(0);
+  background-color: rgb(224, 224, 224);
+  width: max-content;
+  text-align: center;
+  border-radius: 10px;
+  left: -20%;
+  margin-top: 20%;
+  box-shadow: 1.4px 2.7px 7px 0 rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  transition: transform 0.5s ease-out;
+  p {
+    font-family: "Futura Bold";
+    font-size: 16px;
+    margin: 0 auto;
+  }
+}
+
+.serviceItem::before {
+  content: "";
+  position: absolute;
+  top: -20%;
+  left: 35%;
+  border-style: solid;
+  border-width:  0 26px 26px;
+  border-color: rgb(223, 223, 223) transparent;
+  display: block;
+  width: 0;
+  z-index: 0;
+}
+
+.service:hover .serviceItem {
+  transform: scale(1);
 }

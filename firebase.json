@@ -1,0 +1,23 @@
+{
+  "hosting": {
+    "public": "build",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "redirects": [ {
+      "source": "/social-media-management",
+      "destination": "/social-media-management",
+      "type": 302
+    }, {
+      "source": "/advertising",
+      "destination": "/advertising",
+      "type": 302
+    }, {
+      "source": "/our-work",
+      "destination": "/our-work",
+      "type": 302
+    } ]
+  }
+}
