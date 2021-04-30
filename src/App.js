@@ -9,6 +9,7 @@ import Privacy from "./components/misc/privacy";
 import Refund from "./components/misc/refund";
 import Management from "./components/smm";
 import Advertising from "./components/sma";
+import Seo from "./components/seo";
 
 import { ScrollContext } from "./components/context";
 import { useRef } from "react";
@@ -20,14 +21,16 @@ function App() {
   const workRef = useRef();
   const contactFormRef = useRef();
   const pricingRef = useRef();
+  const smmPricingRef = useRef();
   return (
     <div className="App">
       <Router>
-        <ScrollContext.Provider value={{homeRef,workRef,contactFormRef,pricingRef}}>
+        <ScrollContext.Provider value={{homeRef,workRef,contactFormRef,pricingRef,smmPricingRef}}>
           <Navbar />
           <Route exact path="/" component={Home} />
           <Route path="/social-media-management" component={Management}/>
           <Route path="/advertising" component={Advertising}/>
+          <Route path="/seo" component={Seo}/>
           <Route path="/privacy" component={Privacy} />
           <Route path="/terms" component={Terms} />
           <Route path="/refund" component={Refund} />

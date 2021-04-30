@@ -1,0 +1,36 @@
+.slick-current {
+    div {
+        display: flex;
+        justify-content: center;
+        .review {
+            background-color: #fff;
+            padding: 30px 20px;
+            display: block;
+            margin-left: 20px;
+            max-width: 300px;
+            h2 {
+                font-family: "Futura Bold";
+                font-size: 25px;
+                margin: 5px 0;
+                text-transform: uppercase;
+            }
+            h3 {
+                font-family: "Futura Light";
+                font-size: 15px;
+                margin: 0;
+                text-transform: uppercase;
+            }
+            p {
+                font-family: "Futura Medium";
+                color: #888888;
+            }
+        }
+    }
+}
+
+.slick-arrow {
+    width: 40px;
+    position: absolute;
+    height: auto;
+    margin: 0 80px;
+}

@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 
+import { ScrollContext } from "../context";
 import styles from "./sma.module.scss";
 import Faq from "./faq";
 import Sap from "./sap";
@@ -7,6 +8,10 @@ import Contact from "../contact";
 import Manage from "./manage";
 
 export default function Advertising() {
+  const { contactFormRef } = useContext(ScrollContext);
+  const handleContactClick = () => {
+    contactFormRef.current.scrollIntoView({ behavior: "smooth" });
+  };
   return (
     <>
       <section className={styles.hero}>
@@ -25,7 +30,7 @@ export default function Advertising() {
               <p>Fast turn arounds. Reliable and Affordable</p>
             </div>
             <div className={styles.flex}>
-              <p className={styles.buttonP}>Contact Us</p>
+              <p className={styles.buttonP} onClick={handleContactClick}>Contact Us</p>
             </div>
           </div>
         </div>

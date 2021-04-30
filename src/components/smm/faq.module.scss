@@ -37,7 +37,6 @@
       }
     }
     .faqContainer {
-      box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.3);
       cursor: pointer;
       .question {
         position: relative;
@@ -45,13 +44,14 @@
         background-color: #e7e7e7;
         padding: 8px 30px 8px 5px;
         text-align: center;
+        box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.3);
         p {
           margin: 0;
-          font-family: "Futura Medium";
+          font-family: "Futura Bold";
           font-weight: 500;
           font-size: 15px;
           @include mq-sm {
-            font-size: 20px;
+            font-size: 25px;
           }
         }
         img {
@@ -72,24 +72,15 @@
     .answer {
       margin-top: 0;
       margin-bottom: 25px;
-      box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, 0.3);
       padding: 10px;
-      transform: scale(0);
-      transition: transform 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+      font-family: "Futura Medium";
+      border: 2px solid #e7e7e7;
       p {
         font-size: 12px;
         @include mq-sm {
           font-size: 16px;
         }
       }
-    }
-    .scale1 {
-      transform: scale(1) !important;
-      max-height: max-content;
-    }
-    .scale0 {
-      transform: scale(0) !important;
-      max-height: 0;
     }
     .rotate {
       transform: rotateZ(180deg) !important;

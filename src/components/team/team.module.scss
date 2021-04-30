@@ -1,0 +1,384 @@
+@mixin mq-xs {
+  @media (min-width: 320px) {
+    @content;
+  }
+}
+
+@mixin mq-sm {
+  @media (min-width: 500px) {
+    @content;
+  }
+}
+
+@mixin mq-md {
+  @media (min-width: 770px) {
+    @content;
+  }
+}
+
+@mixin mq-lg {
+  @media (min-width: 1000px) {
+    @content;
+  }
+}
+
+@mixin mq-xl {
+  @media (min-width: 1400px) {
+    @content;
+  }
+}
+
+.hero {
+  width: 100vw;
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fcover.jpg?alt=media&token=8ed38304-b9ef-4e03-b3bd-071d03c34c37");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: max-content;
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .subContainer {
+      display: block;
+      margin-top: 90px;
+      margin-bottom: 90px;
+      h1 {
+        font-family: "Nunito";
+        font-size: 15px;
+        font-weight: 300;
+        color: #fff;
+        text-align: center;
+        text-transform: uppercase;
+        @include mq-sm {
+          font-size: 25px;
+        }
+      }
+      h2 {
+        font-family: "Futura Bold";
+        font-size: 20px;
+        font-weight: bold;
+        color: #fff;
+        text-transform: uppercase;
+        text-align: center;
+        margin: 0;
+        letter-spacing: 2px;
+        @include mq-sm {
+          letter-spacing: 5px;
+          font-size: 35px;
+        }
+      }
+      h3 {
+        font-family: "Nunito";
+        font-size: 15px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #fcb813;
+        border-radius: 90px;
+        border: 2px solid #fff;
+        padding: 5px 10px;
+        max-width: max-content;
+        margin: 20px auto;
+        @include mq-sm {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+
+.reviews {
+  width: 100%;
+  .container {
+    h2 {
+      font-family: "Futura Medium";
+      color: #8e8888;
+      text-transform: uppercase;
+      text-align: center;
+      font-size: 25px;
+      letter-spacing: 2px;
+    }
+    .reviewContainer {
+      padding: 0 40px;
+      display: flex;
+      background-color: #f0f0f0;
+      justify-content: space-between;
+      align-items: center;
+      img {
+        width: 18%;
+      }
+    }
+  }
+}
+
+.ourTeam {
+  width: 100%;
+  margin-top: 50px;
+  .container {
+    display: block;
+    align-items: center;
+    padding: 0 40px;
+    justify-content: space-around;
+    @include mq-sm {
+      display: flex;
+    }
+    span {
+      display: block;
+      p {
+        text-transform: capitalize;
+        font-family: "Futura Medium";
+        font-size: 30px;
+        margin: 5px 0;
+        font-weight: bold;
+        text-align: center;
+        @include mq-sm {
+          font-size: 45px;
+          text-align: start;
+        }
+      }
+    }
+    .videoContainer {
+      max-height: max-content;
+      width: 100%;
+      @include mq-sm {
+        width: 600px;
+      }
+    }
+  }
+}
+
+.whyChoose {
+  width: 100%;
+  .container {
+    display: block;
+    padding: 0 40px;
+    @include mq-xl {
+      padding: 0 180px;
+    }
+    @include mq-sm {
+      display: flex;
+      justify-content: space-between;
+    }
+    span {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      text-align: center;
+      @include mq-sm {
+        width: 700px;
+        max-width: 700px;
+        text-align: start;
+      }
+      h2 {
+        text-transform: capitalize;
+        font-family: "Futura Medium";
+        font-size: 25px;
+        font-weight: bold;
+        @include mq-sm {
+          font-size: 45px;
+        }
+      }
+      p {
+        font-family: "Futura Medium";
+        color: #999999;
+        font-size: 15px;
+        line-height: 1.45;
+        @include mq-sm {
+          font-size: 20px;
+        }
+      }
+    }
+    div {
+      margin: 0;
+      @include mq-sm {
+        margin: 45px 20px;
+        margin-top: 90px;
+      }
+      video {
+        width: 100%;
+        @include mq-sm {
+          width: 500px;
+        }
+        @include mq-xl {
+          width: 700px;
+        }
+      }
+    }
+  }
+}
+
+.promise {
+  width: 100%;
+  .container {
+    padding: 0 40px;
+    @include mq-xl {
+      padding: 0 180px;
+    }
+    h2 {
+      font-family: "Futura Medium";
+      font-size: 25px;
+      font-weight: bold;
+      text-align: center;
+      @include mq-sm {
+        font-size: 45px;
+      }
+    }
+    span {
+      display: block;
+      @include mq-sm {
+        display: flex;
+        justify-content: space-between;
+      }
+      align-items: center;
+      div {
+        border-radius: 30px;
+        border: 2px solid #5cd97c;
+        margin: 0 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        max-width: 155px;
+        width: 155px;
+        height: 155px;
+        max-height: 155px;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        @include mq-sm {
+          margin: revert;
+          margin-bottom: revert;
+        }
+        img {
+          padding: 15px;
+          margin: 0 auto;
+          text-align: center;
+          max-width: 60%;
+        }
+        p {
+          text-align: center;
+          color: #5cd97c;
+          font-family: "Futura Medium";
+          font-size: 15px;
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+.testimonials {
+  width: 100%;
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h2 {
+      font-family: "Futura Medium";
+      font-size: 25px;
+      font-weight: bold;
+      text-align: center;
+      @include mq-sm {
+        font-size: 45px;
+      }
+    }
+    .testimonialsContainer {
+      background-image: url("https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Ftestimonials.png?alt=media&token=408f0e82-e2ff-46d4-9fc3-9e0f67fdd721");
+      width: 350px;
+      height: 250px;
+      background-repeat: no-repeat;
+      background-size: contain;
+      position: relative;
+      @include mq-sm {
+        width: 600px;
+        height: 400px;
+      }
+      .review {
+        margin-top: 16%;
+        margin-left: 8%;
+        font-family: "Futura Medium";
+        font-size: 12px;
+        text-align: center;
+        max-width: 300px;
+        @include mq-sm {
+          font-size: 20px;
+          margin-left: 10%;
+          max-width: 500px;
+        }
+      }
+      .name {
+        margin-top: 12%;
+        max-width: 500px;
+        margin-left: 45%;
+        font-family: "Futura Medium";
+        font-size: 15px;
+        @include mq-sm {
+          font-size: 25px;
+          margin-top: 15%;
+          margin-left: 40%;
+        }
+      }
+    }
+  }
+}
+
+.ourWork {
+  width: 100%;
+  .container {
+    h2 {
+      font-family: "Futura Medium";
+      font-size: 25px;
+      font-weight: bold;
+      text-align: center;
+      @include mq-sm {
+        font-size: 45px;
+      }
+    }
+    .subContainer {
+      display: block;
+      justify-content: center;
+      margin-bottom: 40px;
+      @include mq-sm {
+        display: flex;
+      }
+      .workContainer {
+        box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.37);
+        position: relative;
+        border-radius: 10px;
+        margin: 30px;
+        @include mq-sm {
+          margin: 0 30px;
+        }
+        img {
+          width: 100%;
+          border-radius: 10px 10px 0 0;
+          @include mq-sm {
+            width: 350px;
+            height: 260px;
+          }
+        }
+        .whiteSpace {
+          width: 350px;
+          height: 105px;
+        }
+        .textContainer {
+          position: absolute;
+          background-color: #fff;
+          right: 0;
+          top: 60%;
+          width: 180px;
+          padding: 30px 15px 0px;
+          h3 {
+            font-family: "Futura Medium";
+            font-size: 20px;
+            text-align: left;
+            margin: 0;
+          }
+          p {
+            font-family: "Futura Medium";
+            font-size: 15px;
+            color: #55c6f2;
+          }
+        }
+      }
+    }
+  }
+}

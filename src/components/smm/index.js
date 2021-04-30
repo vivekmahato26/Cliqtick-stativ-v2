@@ -1,6 +1,8 @@
-import React, {  useContext } from "react";
+import React, { useContext } from "react";
 
 import { ScrollContext } from "../context";
+
+import { Link } from "react-router-dom";
 
 import styles from "./smm.module.scss";
 
@@ -11,7 +13,11 @@ import Faq from "./faq";
 import Contact from "../contact";
 
 export default function Management() {
-  const {  pricingRef } = useContext(ScrollContext);
+  const { contactFormRef } = useContext(ScrollContext);
+  const handleContactClick = () => {
+    contactFormRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <>
       <section className={styles.hero}>
@@ -33,15 +39,20 @@ export default function Management() {
               <p>Fast turn arounds. Reliable and Affordable</p>
             </div>
             <div className={styles.flex}>
-              <p className={styles.buttonA}>Our Portfolio</p>
-              <p className={styles.buttonP}>Contact Us</p>
+              <Link to="/our-work">
+                <p className={styles.buttonA}>Our Portfolio</p>
+              </Link>
+              <p className={styles.buttonP} onClick={handleContactClick}>
+                Contact Us
+              </p>
             </div>
           </div>
         </div>
       </section>
       <section className={styles.smp}>
         <div className={styles.container}>
-          <h2>Why are social media platforms</h2><h2> important to your business ?</h2>
+          <h2>Why are social media platforms</h2>
+          <h2> important to your business ?</h2>
           <div>
             <div className={styles.tab}>
               <span>
@@ -78,7 +89,8 @@ export default function Management() {
             </div>
             <div className={styles.tab}>
               <span>
-                <img className={styles.mt18}
+                <img
+                  className={styles.mt18}
                   src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fsmm%2FImg_3.png?alt=media&token=51af0e2d-22fa-4042-b219-e515580237e8"
                   alt="Encourage Engagement"
                 />
@@ -93,10 +105,10 @@ export default function Management() {
           </div>
         </div>
       </section>
-      <Smd ref={pricingRef} />
-      <Pricing ref={pricingRef} />
+      <Smd />
+      <Pricing />
       <Faq />
-      <Contact page="smm"/>
+      <Contact page="smm" />
     </>
   );
 }

@@ -15,27 +15,10 @@
   margin-right: auto;
 }
 
-.flexBox {
-  display: flex;
-  justify-content: flex-start;
-  margin-top: 4%;
-  @include mq-md {
-    justify-content: flex-end;
-    margin-top: 20%;
-  }
-}
-
 .heading {
   font-size: 18px;
   @include mq-sm {
     font-size: 25px;
-  }
-}
-
-.midCol {
-  padding: 12px 0;
-  @include mq-sm {
-    padding: 0.75rem;
   }
 }
 
@@ -89,12 +72,6 @@
     display: flex;
     justify-content: space-evenly;
   }
-  .column1 {
-    width: 100%;
-    @include mq-sm {
-      width: 35%;
-    }
-  }
 }
 .addr {
   margin: 0;
@@ -109,4 +86,51 @@
   color: #fff;
   margin: 0;
   padding: 10px;
+}
+
+.flexbox {
+  display: flex;
+  align-items: center;
+  img {
+    width: 32px;
+  }
+  p {
+    margin: 10px 0;
+  }
+}
+
+.flex {
+  display: flex; 
+  img {
+    width: 32px;
+    height: 32px;
+  }
+  span {
+    display: block;
+    p {
+      margin: 5px 0;
+    }
+  }
+}
+
+.social {
+  .socialIcons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+  }
+  .whatsapp {
+    display: flex;
+    border: 1px solid #000;
+    align-items: center;
+    img {
+      padding: 10px;
+    }
+    p{
+      margin: 5px auto;
+      color: #000;
+      padding-right: 10px;
+    }
+  }
 }

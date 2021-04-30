@@ -72,15 +72,21 @@
                 display: block;
                 .title {
                     font-family: "Futura Bold";
-                    font-size: 15px;
+                    font-size: 20px;
                     text-transform: uppercase;
                     letter-spacing: 0.3px;
+                    @include mq-md {
+                        font-size: 25px;
+                    }
                 }
                 .desc {
                     font-family: "Futura Medium";
                     font-size: 15px;
                     letter-spacing: 0.3px;
                     margin-top: 25px;
+                    @include mq-md {
+                        font-size: 20px;
+                    }
                 }
             }
         }

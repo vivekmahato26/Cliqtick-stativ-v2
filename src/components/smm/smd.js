@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 
+import { ScrollContext } from "../context";
 import styles from "./smd.module.scss";
 
 export default function Smd({pricingRef}) {
-  const handleClick = () => {
-    console.log("clciked");
-    pricingRef.current.scrollIntoView({behaviour: "smooth"});
-  }
+  const {  smmPricingRef } = useContext(ScrollContext);
+  const { contactFormRef } = useContext(ScrollContext);
+  const handlePricingClick = () => {
+    smmPricingRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+  const handleContactClick = () => {
+    contactFormRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+  
   return (
     <>
       <section className={styles.smd}>
@@ -14,7 +20,7 @@ export default function Smd({pricingRef}) {
           <h2>Getting started is easy</h2>
           <div className={styles.subContainer}>
             <div>
-              <div className={styles.subContainer1}>
+              <div className={styles.subContainer1} onClick={handlePricingClick}>
                 <div className={styles.content}>
                     <h1 className={styles.subtitle}>#1 Choose &amp; Order</h1>
                     <p className={styles.description}>
@@ -22,7 +28,7 @@ export default function Smd({pricingRef}) {
                       marketing managers will schedule a call within 24hrs
                       through Zoom, Skype or Google Meet
                     </p>
-                    <button className={styles.button} onClick={handleClick}>Our Pricing</button>
+                    <button className={styles.button} >Our Pricing</button>
                 </div>
                 <div className={styles.img}>
                   <img 
@@ -88,7 +94,7 @@ export default function Smd({pricingRef}) {
                     </p>
                 </div>
               </div>
-              <div className={styles.subContainer5}>
+              <div className={styles.subContainer5} onClick={handleContactClick}>
                 <div className={styles.content}>
                       <h1 className={styles.subtitle}>Any Questions?</h1>
                       <button className={styles.button}>Contact Us</button>

@@ -4,6 +4,7 @@ import { ScrollContext } from "../context";
 import styles from "./pricing.module.scss";
 
 export default function Pricing() {
+  const {  pricingRef } = useContext(ScrollContext);
   const { contactFormRef } = useContext(ScrollContext);
   const handleBooknow = () => {
     contactFormRef.current.scrollIntoView({ behavior: "smooth" });
@@ -293,7 +294,7 @@ export default function Pricing() {
   ];
   return (
     <>
-      <section className={styles.pricing}>
+      <section className={styles.pricing} ref={pricingRef}>
         <div className={styles.container}>
           <h5>Pricing</h5>
           <div className={styles.pricingContainer}>
