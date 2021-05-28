@@ -1,15 +1,15 @@
-import React, { useState , useContext } from "react";
+import React, { useState, useContext } from "react";
 
 import styles from "./packages.module.scss";
 
 import Collapsible from "../collapsible";
 
-import {ScrollContext} from "../context";
+import { ScrollContext } from "../context";
 
 export default function Packages() {
   const [active, setActive] = useState(-1);
 
-  const {pricingRef} = useContext(ScrollContext);
+  const { pricingRef } = useContext(ScrollContext);
 
   const SEOContent = [
     {
@@ -43,34 +43,37 @@ export default function Packages() {
         <div className={`${styles.details}`}>
           <table>
             <tr>
-              <td>Search Engine Friendly Analysis</td>
-              <td>
-                <img
-                  src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fseo%2F13.png?alt=media&token=52735017-02fd-4731-9d00-f20a9e4080ad"
-                  alt=""
-                />
-              </td>
-              <td>
-                <img
-                  src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fseo%2F13.png?alt=media&token=52735017-02fd-4731-9d00-f20a9e4080ad"
-                  alt=""
-                />
-              </td>
-              <td>
-                <img
-                  src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fseo%2F13.png?alt=media&token=52735017-02fd-4731-9d00-f20a9e4080ad"
-                  alt=""
-                />
-              </td>
-              <td>
-                <img
-                  src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fseo%2F13.png?alt=media&token=52735017-02fd-4731-9d00-f20a9e4080ad"
-                  alt=""
-                />
-              </td>
+              <td className={styles.title}>Search Engine Friendly Analysis</td>
+              <div>
+                <td>
+                  <img
+                    src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fseo%2F13.png?alt=media&token=52735017-02fd-4731-9d00-f20a9e4080ad"
+                    alt=""
+                  />
+                </td>
+                <td>
+                  <img
+                    src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fseo%2F13.png?alt=media&token=52735017-02fd-4731-9d00-f20a9e4080ad"
+                    alt=""
+                  />
+                </td>
+                <td>
+                  <img
+                    src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fseo%2F13.png?alt=media&token=52735017-02fd-4731-9d00-f20a9e4080ad"
+                    alt=""
+                  />
+                </td>
+                <td>
+                  <img
+                    src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fseo%2F13.png?alt=media&token=52735017-02fd-4731-9d00-f20a9e4080ad"
+                    alt=""
+                  />
+                </td>
+              </div>
             </tr>
             <tr>
               <td>Link Popularity Analysis</td>
+              <div>
               <td>
                 <img
                   src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fseo%2F13.png?alt=media&token=52735017-02fd-4731-9d00-f20a9e4080ad"
@@ -94,10 +97,11 @@ export default function Packages() {
                   src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fseo%2F13.png?alt=media&token=52735017-02fd-4731-9d00-f20a9e4080ad"
                   alt=""
                 />
-              </td>
+              </td></div>
             </tr>
             <tr>
               <td>Keywords Research and Analysis</td>
+              <div>
               <td>
                 <img
                   src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fseo%2F13.png?alt=media&token=52735017-02fd-4731-9d00-f20a9e4080ad"
@@ -121,10 +125,11 @@ export default function Packages() {
                   src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fseo%2F13.png?alt=media&token=52735017-02fd-4731-9d00-f20a9e4080ad"
                   alt=""
                 />
-              </td>
+              </td></div>
             </tr>
             <tr>
               <td>Duplicate content analysis</td>
+              <div>
               <td>
                 <img
                   src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fseo%2F13.png?alt=media&token=52735017-02fd-4731-9d00-f20a9e4080ad"
@@ -148,10 +153,11 @@ export default function Packages() {
                   src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fseo%2F13.png?alt=media&token=52735017-02fd-4731-9d00-f20a9e4080ad"
                   alt=""
                 />
-              </td>
+              </td></div>
             </tr>
             <tr>
               <td>Website Structure analysis</td>
+              <div>
               <td>
                 <img
                   src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fseo%2F14.png?alt=media&token=98e39b37-b36f-41a6-bcfd-6f6a92460a36"
@@ -175,10 +181,10 @@ export default function Packages() {
                   src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fseo%2F13.png?alt=media&token=52735017-02fd-4731-9d00-f20a9e4080ad"
                   alt=""
                 />
-              </td>
+              </td></div>
             </tr>
             <tr>
-              <td>Competitor Analysis</td>
+              <td>Competitor Analysis</td><div>
               <td>
                 <img
                   src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fseo%2F14.png?alt=media&token=98e39b37-b36f-41a6-bcfd-6f6a92460a36"
@@ -202,10 +208,10 @@ export default function Packages() {
                   src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fseo%2F13.png?alt=media&token=52735017-02fd-4731-9d00-f20a9e4080ad"
                   alt=""
                 />
-              </td>
+              </td></div>
             </tr>
             <tr>
-              <td>Detailed SEO Plan</td>
+              <td>Detailed SEO Plan</td><div>
               <td>
                 <img
                   src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fseo%2F13.png?alt=media&token=52735017-02fd-4731-9d00-f20a9e4080ad"
@@ -229,7 +235,7 @@ export default function Packages() {
                   src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fseo%2F13.png?alt=media&token=52735017-02fd-4731-9d00-f20a9e4080ad"
                   alt=""
                 />
-              </td>
+              </td></div>
             </tr>
           </table>
         </div>
@@ -2337,11 +2343,7 @@ export default function Packages() {
           </div>
           <div className={styles.content}>
             {SEOContent.map((s) => {
-              return (
-                <Collapsible title={s.title}>
-                  {s.children}
-                </Collapsible>
-              )
+              return <Collapsible title={s.title}>{s.children}</Collapsible>;
             })}
           </div>
         </div>

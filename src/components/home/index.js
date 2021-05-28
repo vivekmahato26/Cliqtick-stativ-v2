@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 
 import { Link } from "react-router-dom";
 
@@ -7,12 +7,12 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./slick.scss";
 
-import {ScrollContext} from "../context";
+import { ScrollContext } from "../context";
 
 import styles from "./home.module.scss";
 
 export default function Home() {
-  const {workRef} = useContext(ScrollContext);
+  const { workRef } = useContext(ScrollContext);
   const nextArrow = (
     <img
       className={styles.nextArrow}
@@ -32,7 +32,6 @@ export default function Home() {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    arrows: true,
     pauseOnHover: true,
     dots: true,
     dotsClass: styles.indicators,
@@ -49,6 +48,20 @@ export default function Home() {
     dots: true,
     dotsClass: styles.indicators,
     slidesPerRow: 2,
+    centerPadding: "50%",
+    nextArrow,
+    prevArrow,
+  };
+  const settingsReviewsM = {
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true,
+    pauseOnHover: true,
+    dots: true,
+    dotsClass: styles.indicators,
+    slidesPerRow: 1,
     centerPadding: "50%",
     nextArrow,
     prevArrow,
@@ -99,17 +112,24 @@ export default function Home() {
         <div className={styles.container}>
           <div>
             <h3>Real Results</h3>
-            <p>Forget vanity metrics like Facebook likes or Twitter followers.</p><p> We’re about leads, customers and sales.</p>
+            <p>
+              Forget vanity metrics like Facebook likes or Twitter followers.
+            </p>
+            <p> We’re about leads, customers and sales.</p>
             <p className={styles.anchor}>Learn More</p>
           </div>
           <div>
             <h3>Month to month</h3>
-            <p>No long term contracts up front. We create a risk free environment</p><p> to work with us where we earn the work every month.</p>
+            <p>
+              No long term contracts up front. We create a risk free environment
+            </p>
+            <p> to work with us where we earn the work every month.</p>
             <p className={styles.anchor}>Learn More</p>
           </div>
           <div>
             <h3>We're virtual</h3>
-            <p>We’re a distributed global team. That means industry </p><p>leading accessibility and responsiveness to you.</p>
+            <p>We’re a distributed global team. That means industry </p>
+            <p>leading accessibility and responsiveness to you.</p>
             <p className={styles.anchor}>Learn More</p>
           </div>
         </div>
@@ -117,94 +137,196 @@ export default function Home() {
       <section className={styles.clients}>
         <div className={styles.container}>
           <h2>Who We Work With</h2>
-          <Slider {...settings}>
-            <div className={styles.slide}>
-              <img
-                src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fclients%2FLogo1.png?alt=media&token=c3898771-0bc8-43f1-a9a1-327033d1b1e7"
-                alt="Dr. Maxx Care"
-              />
-              <img
-                src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fclients%2FLogo20%20(1).png?alt=media&token=ace814df-2f4d-44e1-8150-60b721c59b53"
-                alt="Unbound"
-              />
-              <img
-                src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fclients%2FLogo3.png?alt=media&token=f0263605-7967-4e40-afed-27898c3a18d4"
-                alt="momozz"
-              />
-              <img
-                src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fclients%2FLogo17%20(1).png?alt=media&token=b143570d-654d-43ad-9987-4555c480b8c9"
-                alt="Global Assist"
-              />
-            </div>
-            <div className={styles.slide}>
-              <img
-                src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fclients%2FLogo18%20(2)%20(1).png?alt=media&token=85f07128-23ba-47a3-bc02-b424c447bf80"
-                alt="Immigration Master"
-              />
-              <img
-                src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fclients%2FLogo19%20(1).png?alt=media&token=8275f8eb-6f95-422b-b901-afdcd96143db"
-                alt="Vevibes"
-              />
-              <img
-                src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fclients%2FLogo4.png?alt=media&token=2d38a0e7-3868-4538-9b28-7c6f95eeee37"
-                alt="Med 7"
-              />
-              <img
-                src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fclients%2Faliensgroup.png?alt=media&token=131d56f4-08bd-4947-90af-ae1d8bc419ab"
-                alt="Aliens Group"
-              />
-            </div>
-            <div className={styles.slide}>
-              <img
-                src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fclients%2Faltmart.jpg?alt=media&token=ed8969d6-b101-4d2f-9f21-8c191ea0605e"
-                alt="Alt Mart"
-              />
-              <img
-                src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fclients%2Fcocktailsrestraunt.jpg?alt=media&token=6286ee6d-46ce-4d7d-8b38-2563d783cf39"
-                alt="Cocktails"
-              />
-              <img
-                src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fclients%2Fdonatekart.jpg?alt=media&token=98c549c2-c01b-48f2-9f4b-7dc46dbc493e"
-                alt="Donatekart"
-              />
-              <img
-                src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fclients%2Ffemcare.jpg?alt=media&token=ea53ba3d-f396-4aeb-88e8-6f20a02ed22f"
-                alt="Femcare"
-              />
-            </div>
-            <div className={styles.slide}>
-              <img
-                src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fclients%2Fgradright.png?alt=media&token=7362c3f4-b6d8-46ab-b875-47e373cc03d1"
-                alt="Grad Right"
-              />
-              <img
-                src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fclients%2Fholeinthewall.jpg?alt=media&token=992bee95-ce43-40d3-9d1f-5f0703a498c7"
-                alt="Hole in the wall"
-              />
-              <img
-                src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fclients%2Frisinia.png?alt=media&token=ccaa21fd-621d-4952-8193-2c192de947f6"
-                alt="Risinia"
-              />
-              <img
-                src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fclients%2Fshriandsam.png?alt=media&token=a4d9cace-62b1-48fb-8daa-a1e2031baef7"
-                alt="Shri &amp; sam"
-              />
-            </div>
-            <div className={styles.slide}>
-              <img
-                src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fclients%2Fswiflearn.png?alt=media&token=a39e9107-1ef2-4cec-bb75-1d117987b713"
-                alt="Swiflearn"
-              />
-              <img
-                src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fclients%2Fthemintleaf.jpg?alt=media&token=6254a7df-e1b1-467d-8cc8-ed731d817881"
-                alt="The Mint Leaf"
-              />
-              <img
-                src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fclients%2Fwontonmomos.png?alt=media&token=b195dc9d-8016-477a-84b9-401adbc644c3"
-                alt="Wonton Momos"
-              />
-            </div>
-          </Slider>
+          <div className={styles.desktop}>
+            <Slider {...settings}>
+              <div className={styles.slide}>
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fclients%2FLogo1.png?alt=media&token=c3898771-0bc8-43f1-a9a1-327033d1b1e7"
+                  alt="Dr. Maxx Care"
+                />
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fclients%2FLogo20%20(1).png?alt=media&token=ace814df-2f4d-44e1-8150-60b721c59b53"
+                  alt="Unbound"
+                />
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fclients%2FLogo3.png?alt=media&token=f0263605-7967-4e40-afed-27898c3a18d4"
+                  alt="momozz"
+                />
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fclients%2FLogo17%20(1).png?alt=media&token=b143570d-654d-43ad-9987-4555c480b8c9"
+                  alt="Global Assist"
+                />
+              </div>
+              <div className={styles.slide}>
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fclients%2FLogo18%20(2)%20(1).png?alt=media&token=85f07128-23ba-47a3-bc02-b424c447bf80"
+                  alt="Immigration Master"
+                />
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fclients%2FLogo19%20(1).png?alt=media&token=8275f8eb-6f95-422b-b901-afdcd96143db"
+                  alt="Vevibes"
+                />
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fclients%2FLogo4.png?alt=media&token=2d38a0e7-3868-4538-9b28-7c6f95eeee37"
+                  alt="Med 7"
+                />
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fclients%2Faliensgroup.png?alt=media&token=131d56f4-08bd-4947-90af-ae1d8bc419ab"
+                  alt="Aliens Group"
+                />
+              </div>
+              <div className={styles.slide}>
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fclients%2Faltmart.jpg?alt=media&token=ed8969d6-b101-4d2f-9f21-8c191ea0605e"
+                  alt="Alt Mart"
+                />
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fclients%2Fcocktailsrestraunt.jpg?alt=media&token=6286ee6d-46ce-4d7d-8b38-2563d783cf39"
+                  alt="Cocktails"
+                />
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fclients%2Fdonatekart.jpg?alt=media&token=98c549c2-c01b-48f2-9f4b-7dc46dbc493e"
+                  alt="Donatekart"
+                />
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fclients%2Ffemcare.jpg?alt=media&token=ea53ba3d-f396-4aeb-88e8-6f20a02ed22f"
+                  alt="Femcare"
+                />
+              </div>
+              <div className={styles.slide}>
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fclients%2Fgradright.png?alt=media&token=7362c3f4-b6d8-46ab-b875-47e373cc03d1"
+                  alt="Grad Right"
+                />
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fclients%2Fholeinthewall.jpg?alt=media&token=992bee95-ce43-40d3-9d1f-5f0703a498c7"
+                  alt="Hole in the wall"
+                />
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fclients%2Frisinia.png?alt=media&token=ccaa21fd-621d-4952-8193-2c192de947f6"
+                  alt="Risinia"
+                />
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fclients%2Fshriandsam.png?alt=media&token=a4d9cace-62b1-48fb-8daa-a1e2031baef7"
+                  alt="Shri &amp; sam"
+                />
+              </div>
+              <div className={styles.slide}>
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fclients%2Fswiflearn.png?alt=media&token=a39e9107-1ef2-4cec-bb75-1d117987b713"
+                  alt="Swiflearn"
+                />
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fclients%2Fthemintleaf.jpg?alt=media&token=6254a7df-e1b1-467d-8cc8-ed731d817881"
+                  alt="The Mint Leaf"
+                />
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fclients%2Fwontonmomos.png?alt=media&token=b195dc9d-8016-477a-84b9-401adbc644c3"
+                  alt="Wonton Momos"
+                />
+              </div>
+            </Slider>
+          </div>
+          <div className={styles.mobile}>
+            <Slider {...settings}>
+              <div className={styles.slide}>
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fclients%2FLogo1.png?alt=media&token=c3898771-0bc8-43f1-a9a1-327033d1b1e7"
+                  alt="Dr. Maxx Care"
+                />
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fclients%2FLogo20%20(1).png?alt=media&token=ace814df-2f4d-44e1-8150-60b721c59b53"
+                  alt="Unbound"
+                />
+              </div>
+              <div className={styles.slide}>
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fclients%2FLogo3.png?alt=media&token=f0263605-7967-4e40-afed-27898c3a18d4"
+                  alt="momozz"
+                />
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fclients%2FLogo17%20(1).png?alt=media&token=b143570d-654d-43ad-9987-4555c480b8c9"
+                  alt="Global Assist"
+                />
+              </div>
+              <div className={styles.slide}>
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fclients%2FLogo18%20(2)%20(1).png?alt=media&token=85f07128-23ba-47a3-bc02-b424c447bf80"
+                  alt="Immigration Master"
+                />
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fclients%2FLogo19%20(1).png?alt=media&token=8275f8eb-6f95-422b-b901-afdcd96143db"
+                  alt="Vevibes"
+                />
+              </div>
+              <div className={styles.slide}>
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fclients%2FLogo4.png?alt=media&token=2d38a0e7-3868-4538-9b28-7c6f95eeee37"
+                  alt="Med 7"
+                />
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fclients%2Faliensgroup.png?alt=media&token=131d56f4-08bd-4947-90af-ae1d8bc419ab"
+                  alt="Aliens Group"
+                />
+              </div>
+              <div className={styles.slide}>
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fclients%2Faltmart.jpg?alt=media&token=ed8969d6-b101-4d2f-9f21-8c191ea0605e"
+                  alt="Alt Mart"
+                />
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fclients%2Fcocktailsrestraunt.jpg?alt=media&token=6286ee6d-46ce-4d7d-8b38-2563d783cf39"
+                  alt="Cocktails"
+                />
+              </div>
+              <div className={styles.slide}>
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fclients%2Fdonatekart.jpg?alt=media&token=98c549c2-c01b-48f2-9f4b-7dc46dbc493e"
+                  alt="Donatekart"
+                />
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fclients%2Ffemcare.jpg?alt=media&token=ea53ba3d-f396-4aeb-88e8-6f20a02ed22f"
+                  alt="Femcare"
+                />
+              </div>
+              <div className={styles.slide}>
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fclients%2Fgradright.png?alt=media&token=7362c3f4-b6d8-46ab-b875-47e373cc03d1"
+                  alt="Grad Right"
+                />
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fclients%2Fholeinthewall.jpg?alt=media&token=992bee95-ce43-40d3-9d1f-5f0703a498c7"
+                  alt="Hole in the wall"
+                />
+              </div>
+              <div className={styles.slide}>
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fclients%2Frisinia.png?alt=media&token=ccaa21fd-621d-4952-8193-2c192de947f6"
+                  alt="Risinia"
+                />
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fclients%2Fshriandsam.png?alt=media&token=a4d9cace-62b1-48fb-8daa-a1e2031baef7"
+                  alt="Shri &amp; sam"
+                />
+              </div>
+              <div className={styles.slide}>
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fclients%2Fswiflearn.png?alt=media&token=a39e9107-1ef2-4cec-bb75-1d117987b713"
+                  alt="Swiflearn"
+                />
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fclients%2Fthemintleaf.jpg?alt=media&token=6254a7df-e1b1-467d-8cc8-ed731d817881"
+                  alt="The Mint Leaf"
+                />
+              </div>
+              <div className={styles.slide}>
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2Fclients%2Fwontonmomos.png?alt=media&token=b195dc9d-8016-477a-84b9-401adbc644c3"
+                  alt="Wonton Momos"
+                />
+              </div>
+            </Slider>
+          </div>
         </div>
       </section>
       <section className={styles.story}>
@@ -296,7 +418,8 @@ export default function Home() {
               <h3>Social Media</h3>
               <h3>Team</h3>
               <p>
-              Increase your B2B lead generation by leveraging our LinkedIn Social Sales campaign strategies.
+                Increase your B2B lead generation by leveraging our LinkedIn
+                Social Sales campaign strategies.
               </p>
             </div>
           </div>
@@ -305,23 +428,47 @@ export default function Home() {
       <section className={styles.review}>
         <div className={styles.container}>
           <h2>DON’T JUST TAKE OUR WORD FOR IT</h2>
-          <div className={styles.reviewContainer}>
-            <img
-              src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2FGoogle%20Review%20Logo.png?alt=media&token=a19fe341-df51-4645-964e-6a7e523aabcb"
-              alt="Google Review"
-            />
-            <img
-              src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2FClutch%20Logo.png?alt=media&token=6ebf044b-5cc6-4799-8ac7-af1a27457922"
-              alt="Clutch"
-            />
-            <img
-              src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2FGood%20Firms%20Logo.png?alt=media&token=ff2fa681-5d7f-463b-8f89-25f86c689b4a"
-              alt="Good Firms"
-            />
-            <img
-              src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2FDesign%20Rush%20Logo.png?alt=media&token=dd0a73ae-0125-4462-9e67-3bc450a7891e"
-              alt="Design Rush"
-            />
+          <div className={styles.desktop}>
+            <div className={styles.reviewContainer}>
+              <img
+                src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2FGoogle%20Review%20Logo.png?alt=media&token=a19fe341-df51-4645-964e-6a7e523aabcb"
+                alt="Google Review"
+              />
+              <img
+                src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2FClutch%20Logo.png?alt=media&token=6ebf044b-5cc6-4799-8ac7-af1a27457922"
+                alt="Clutch"
+              />
+              <img
+                src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2FGood%20Firms%20Logo.png?alt=media&token=ff2fa681-5d7f-463b-8f89-25f86c689b4a"
+                alt="Good Firms"
+              />
+              <img
+                src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2FDesign%20Rush%20Logo.png?alt=media&token=dd0a73ae-0125-4462-9e67-3bc450a7891e"
+                alt="Design Rush"
+              />
+            </div>
+          </div>
+          <div className={styles.mobile}>
+            <div className={styles.reviewContainer}>
+              <img
+                src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2FGoogle%20Review%20Logo.png?alt=media&token=a19fe341-df51-4645-964e-6a7e523aabcb"
+                alt="Google Review"
+              />
+              <img
+                src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2FClutch%20Logo.png?alt=media&token=6ebf044b-5cc6-4799-8ac7-af1a27457922"
+                alt="Clutch"
+              />
+            </div>
+            <div className={styles.reviewContainer}>
+              <img
+                src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2FGood%20Firms%20Logo.png?alt=media&token=ff2fa681-5d7f-463b-8f89-25f86c689b4a"
+                alt="Good Firms"
+              />
+              <img
+                src="https://firebasestorage.googleapis.com/v0/b/cliqtick.appspot.com/o/ststicV2%2FDesign%20Rush%20Logo.png?alt=media&token=dd0a73ae-0125-4462-9e67-3bc450a7891e"
+                alt="Design Rush"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -409,17 +556,32 @@ export default function Home() {
           </div>
           <div className={styles.verticalLine}></div>
           <div className={styles.crousal}>
-            <Slider {...settingsReviews}>
-              {reviews.map((r) => {
-                return (
-                  <div className="review">
-                    <h2>{r.name}</h2>
-                    <h3>{r.position}</h3>
-                    <p>{r.message}</p>
-                  </div>
-                );
-              })}
-            </Slider>
+            <div className={styles.desktop}>
+              <Slider {...settingsReviews}>
+                {reviews.map((r) => {
+                  return (
+                    <div className="review">
+                      <h2>{r.name}</h2>
+                      <h3>{r.position}</h3>
+                      <p>{r.message}</p>
+                    </div>
+                  );
+                })}
+              </Slider>
+            </div>
+            <div className={styles.mobile}>
+              <Slider {...settingsReviewsM}>
+                {reviews.map((r) => {
+                  return (
+                    <div className="review">
+                      <h2>{r.name}</h2>
+                      <h3>{r.position}</h3>
+                      <p>{r.message}</p>
+                    </div>
+                  );
+                })}
+              </Slider>
+            </div>
           </div>
         </div>
       </section>

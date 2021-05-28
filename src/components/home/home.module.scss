@@ -1,6 +1,35 @@
+@mixin mq-lg {
+  @media (min-width: 1370px) {
+    @content;
+  }
+}
+@mixin mq-sm {
+  @media (min-width: 500px) {
+    @content;
+  }
+}
+
+@mixin mq-md {
+  @media (min-width: 770px) {
+    @content;
+  }
+}
+.desktop {
+  display: none;
+  @include mq-sm {
+    display: block;
+  }
+}
+.mobile {
+  display: block;
+  @include mq-sm {
+    display: none;
+  }
+}
+
 .hero {
   width: 100%;
-  height: 60vh;
+  height: 40vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -8,30 +37,39 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  @include mq-sm {
+    height: 60vh;
+  }
   .container {
     text-align: center;
     color: #fff;
     h1 {
       font-family: "Futura Light";
       text-transform: uppercase;
-      font-size: 30px;
+      font-size: 16px;
       letter-spacing: 3px;
       margin: 0;
       margin-bottom: 20px;
+      @include mq-sm {
+        font-size: 30px
+      }
     }
     h3 {
       font-family: "Futura Bold";
-      font-size: 75px;
+      font-size: 30px;
       letter-spacing: 2px;
       margin: 0;
       text-transform: uppercase;
+      @include mq-sm {
+        font-size: 75px;
+      }
     }
     p {
       font-family: "Futura Bold";
       font-size: 15px;
       letter-spacing: 0.25px;
       text-transform: uppercase;
-      margin: 0 auto;
+      margin: 10px auto;
       padding: 20px;
       background-color: #55c6f2;
       max-width: fit-content;
@@ -44,19 +82,27 @@
   width: 100%;
   .container {
     padding: 100px 0;
-    display: flex;
+    display: block;
     justify-content: space-evenly;
+    margin-left: 10px;
+    @include mq-sm {
+      margin: auto;
+      display: flex;
+    }
     div {
       h3 {
         color: #fff;
         font-family: "Futura Bold";
-        font-size: 30px;
+        font-size: 25px;
         text-transform: uppercase;
+        @include mq-sm {
+          font-size: 30px;
+        }
       }
       p {
         color: #fff;
         font-family: "Futura Medium";
-        font-size: 15px;
+        font-size: 18px;
         margin: 5px 0;
       }
       .anchor {
@@ -80,28 +126,41 @@
     padding-bottom: 50px;
     h2 {
       font-family: "Futura Bold";
-      font-size: 45px;
+      font-size: 30px;
       margin: 50px 0;
       color: #0c0c0c;
       text-transform: uppercase;
       text-align: center;
+      @include mq-sm {
+        font-size: 45px;
+      }
     }
+   
     .slide {
       display: flex !important;
       justify-content: center;
       img {
-        height: 130px !important;
+        height: 50px !important;
         width: auto !important;
         margin: 0 30px;
+        @include mq-sm {
+          height: 130px !important;
+        }
       }
     }
     .indicators {
-      margin: 40px auto;
+      margin: 10px auto;
       display: flex !important;
       justify-content: center;
       list-style: none;
+      @include mq-sm {
+        margin: 30px auto;
+      }
       li {
-        margin: 0 25px;
+        margin: 0 5px;
+        @include mq-sm {
+          margin: 0 25px;
+        }
         button {
           border: none;
           border: 2px solid #00c6f3;
@@ -109,8 +168,8 @@
           cursor: pointer;
           display: block;
           height: 15px;
-          width: 15px;
-          border-radius: 7.5px;
+          width: 10px;
+          border-radius: 50%;
         }
       }
     }
@@ -124,11 +183,17 @@
   width: 100%;
   background-color: #e0e0e0;
   .container {
-    padding: 10px 80px;
+    padding: 10px 40px;
+    @include mq-sm {
+      padding: 10px 80px;
+    }
     .heading {
-      display: flex;
+      display: block;
       justify-content: space-around;
       align-items: center;
+      @include mq-sm {
+        display: flex;
+      }
       .logo {
         width: auto;
         height: 70px;
@@ -138,27 +203,36 @@
         h3 {
           font-family: "Futura Bold";
           margin: 5px auto;
-          font-size: 45px;
+          font-size: 20px;
           color: #0c0c0c;
           text-transform: capitalize;
+          @include mq-sm {
+            font-size: 45px;
+          }
         }
       }
     }
     .content {
-      display: flex;
+      display: block;
       justify-content: center;
       margin-top: 5%;
       margin-bottom: 5%;
+      @include mq-sm {
+        display: flex;
+      }
       .leftContainer {
         h2 {
           font-family: "Futura Bold";
           text-transform: uppercase;
-          font-size: 45px;
+          font-size: 25px;
           color: #fff;
           padding: 10px 20px;
           background-color: #797979;
           max-width: fit-content;
           margin: 10px 0 0 0;
+          @include mq-sm {
+            font-size: 45px;
+          }
         }
         p {
           font-family: "Futura Medium";
@@ -169,6 +243,10 @@
       }
       .rightContainer {
         position: relative;
+        margin-top: 20px;
+        @include mq-sm {
+          margin-top: auto;
+        }
       }
       .rightContainer::before {
         content: "";
@@ -199,23 +277,35 @@
   .container {
     h2 {
       font-family: "Futura Bold";
-      font-size: 45px;
+      font-size: 25px;
       color: #fff;
       text-transform: uppercase;
       text-align: center;
+      @include mq-sm{
+        font-size: 45px;
+      }
     }
     .content {
-      display: flex;
+      display: block;
       justify-content: space-evenly;
+      @include mq-sm {
+        display: flex;
+      }
       div {
         text-align: center;
-        width: 20%;
+        width: 100%;
+        padding: 0 20px;
+        @include mq-sm {
+          width: 20%;
+          padding: 0;
+        }
         h3 {
           color: #fff;
           font-family: "Futura Bold";
           font-size: 20px;
           text-transform: uppercase;
           margin: 5px 0;
+          text-align: center;
         }
         p {
           font-family: "Futura Medium";
@@ -240,16 +330,22 @@
     h2 {
       text-align: center;
       font-family: "Futura Bold";
-      font-size: 45px;
+      font-size: 25px;
       margin-top: 5%;
+      @include mq-sm {
+        font-size: 45px;
+      }
     }
     .reviewContainer {
       display: flex;
       justify-content: space-evenly;
       align-items: center;
       img {
-        width: 20%;
+        width: 40%;
         height: fit-content;
+        @include mq-sm {
+          width: 20%;
+        }
       }
     }
   }
@@ -263,13 +359,16 @@
     width: 100%;
     h2 {
       font-family: "Futura Bold";
-      font-size: 45px;
+      font-size: 25px;
       text-align: center;
       text-transform: uppercase;
+      @include mq-sm {
+        font-size: 45px;
+      }
     }
     h5 {
       font-family: "Futura Bold";
-      font-size: 20px;
+      font-size: 16px;
       text-transform: uppercase;
       color: #00c6f3;
       padding: 5px 15px;
@@ -277,42 +376,64 @@
       margin: 20px auto;
       max-width: fit-content;
       cursor: pointer;
+      @include mq-sm {
+        font-size: 20px;
+      }
     }
     .workContent {
       margin-top: 5%;
-      display: flex;
+      display: block;
       align-items: center;
       justify-content: space-evenly;
+      @include mq-sm {
+        display: flex;
+      }
 
       .left {
         h2 {
           font-family: "Futura Bold";
-          font-size: 20px;
+          font-size: 16px;
           text-transform: uppercase;
+          @include mq-sm {
+            font-size: 20px;
+          }
         }
         .row {
-          display: flex;
+            display: flex;
+            justify-content: center;
           img {
             box-shadow: 1.4px 1.4px 4.6px 0.5px rgba(0, 0, 0, 0.29);
             height: 200px;
-            margin: 20px;
+            margin: 10px;
+            @include mq-sm {
+              margin: 20px;
+            }
           }
         }
       }
       .right {
         h2 {
           font-family: "Futura Bold";
-          font-size: 20px;
+          font-size: 16px;
           text-transform: uppercase;
+          @include mq-sm {
+            font-size: 20px;
+          }
         }
         .row {
-          display: flex;
+           display: block;
+          @include mq-sm {
+            display: flex;
+          }
           .videoContainer {
             position: relative;
             .video {
               margin: 20px;
-              height: 200px !important;
+              height: 189px !important;
               width: auto !important;
+              @include mq-sm {
+                height: 200px !important;
+              }
             }
           }
           .videoContainer::before {
@@ -344,33 +465,50 @@
   background-color: #00c6f3;
   padding: 10px 0;
   .container {
-    display: flex;
+    display: block;
     align-items: center;
+    @include mq-sm {
+      display: flex;
+    }
     .head {
-      width: 30%;
+      width: 100%;
       text-transform: uppercase;
+      @include mq-sm {
+        width: 30%;
+      }
       p {
         font-family: "Futura Light";
-        font-size: 30px;
+        font-size: 20px;
         letter-spacing: 1.2px;
         text-align: center;
         color: #ffffff;
         margin: 5px;
+        @include mq-sm {
+          font-size: 30px;
+        }
       }
       h3 {
         font-family: "Futura Bold";
-        font-size: 40px;
+        font-size: 30px;
         letter-spacing: 0.71px;
         text-align: center;
         color: #ffffff;
         margin: 5px;
+        @include mq-sm {
+          font-size: 40px;
+        }
       }
     }
     .verticalLine {
-      width: 5px;
-      height: 50vh;
-      margin: auto 20px;
+      width: 90%;
+      height: 5px;
+      margin: 20px;
       background-color: #09afd5;
+      @include mq-sm {
+        height: 50vh;
+        width: 5px;
+        margin: auto 20px;
+      }
     }
     .crousal {
       overflow: hidden;
@@ -405,7 +543,7 @@
 .nextArrow {
   position: absolute;
   top: -100%;
-  margin-right: 100px;
+  margin-right: 10px;
   img {
     width: 40px;
   }

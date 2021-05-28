@@ -18,55 +18,28 @@
 .container {
   position: sticky;
   top: 0;
-  padding: 0px 41px;
+  padding: 0px 10px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   background-color: #ebebeb;
   width: 100%;
   z-index: 100;
+  @include mq-sm {
+    padding: 0 40px;
+  }
   .logo {
-    width: 180px;
+    width: 150px;
     height: auto;
     padding: 10px 0;
     cursor: pointer;
+    margin-right: 5px;
     @include mq-sm {
+      margin: auto;
       width: 228px;
     }
   }
-  .linkContainer {
-    list-style: none;
-    display: none;
-    @include mq-sm {
-      display: flex;
-    }
-    align-items: center;
-    margin: 0;
-    margin-right: 40px;
-    cursor: pointer;
-    li {
-      text-align: center;
-      font-family: "Futura Bold";
-      font-size: 20px;
-      padding: 0 40px;
-      text-decoration: none;
-      color: #000;
-      @include mq-md {
-        padding: 0 15px;
-      }
-    }
-    .verticalLine {
-      width: 3px;
-      height: 30px;
-      background: #000;
-    }
-    a {
-      text-decoration: none;
-    }
-  }
-  .relative {
-    position: relative;
-  }
+ 
   .social {
     .socialIcons {
       display: flex;
@@ -75,7 +48,10 @@
       margin-top: 15px;
       img {
         margin-right: 12px;
-        width: 30px;
+        width: 15px;
+        @include mq-sm {
+          width: 25px;
+        }
       }
     }
     .whatsapp {
@@ -85,74 +61,29 @@
       margin-bottom: 15px;
       max-width: max-content;
       img {
-        width: 25px;
-        margin-left: 5px;
+        width: 12px;
+        margin-left: 2px;
+        @include mq-sm {
+          margin-left: 5px;
+          width: 25px;
+        }
       }
       p{
         font-family: "Futura Bold";
-        font-size: 20px;
+        font-size: 11px;
         margin: 5px;
         color: #000;
-        padding-right: 5px;
+        padding-right: 2px;
+        @include mq-sm {
+          padding-right: 5px;
+          font-size: 20px;
+        }
       }
     }
   }
 }
 
-.active {
-  position: absolute;
-  width: 110px;
-  height: 60px;
-  background-color: #55c6f2;
-  left: 2.5vw;
-  top: -30px;
-  border-radius: 0 0 10px 10px;
-  z-index: -1;
-  transition: left 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-  display: none;
-  @include mq-sm {
-    display: block;
-  }
-  @include mq-md {
-    width: 100px;
-    left: 2vw;
-  }
-  @include mq-lg {
-    left: 1.5vw;
-  }
-}
 
-.active::after {
-  content: "";
-  position: absolute;
-  display: none;
-  @include mq-sm {
-    display: block;
-  }
-  top: 0;
-  border: 15px solid #55c6f2;
-  right: -13px;
-  z-index: -1;
-  border-radius: 0 0 5px;
-  border-right-color: transparent;
-  border-bottom-color: transparent;
-  border-bottom-left-radius: 10px;
-}
-
-.active::before {
-  content: "";
-  position: absolute;
-  display: none;
-  @include mq-sm {
-    display: block;
-  }
-  top: 0;
-  border: 15px solid #55c6f2;
-  left: -15px;
-  z-index: -1;
-  border-left-color: transparent;
-  border-bottom-color: transparent;
-}
 
 .navItem {
   text-align: center;
@@ -186,9 +117,12 @@ a {
   transition: transform 0.5s ease-out;
   p {
     font-family: "Futura Bold";
-    font-size: 16px;
+    font-size: 14px;
     margin: 0 auto;
     color: #000;
+    @include mq-sm {
+      font-size: 16px;
+    }
   }
   p:hover {
     color: #55c6f2;
@@ -210,4 +144,58 @@ a {
 
 .service:hover .serviceItem {
   transform: scale(1);
+}
+
+.linkContainer {
+  list-style: none;
+  display: none;
+  @include mq-sm {
+    display: flex;
+  }
+  align-items: center;
+  margin: 0;
+  margin-right: 40px;
+  cursor: pointer;
+  li {
+    text-align: center;
+    font-family: "Futura Bold";
+    font-size: 12px;
+    padding: 0 5px;
+    text-decoration: none;
+    color: #000;
+    @include mq-sm {
+      font-size: 20px;
+      padding: 0 40px;
+    }
+    @include mq-md {
+      padding: 0 15px;
+    }
+  }
+  .verticalLine {
+    width: 3px;
+    height: 15px;
+    background: #000;
+    @include mq-sm {
+      height: 30px;
+    }
+  }
+  a {
+    text-decoration: none;
+  }
+}
+
+.mobile {
+  display: block ;
+  background-color: #ebebeb;
+  padding-bottom: 10px;
+  .linkContainer {
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    display: flex !important;
+  }
+  @include mq-sm {
+    display: none;
+  }
 }

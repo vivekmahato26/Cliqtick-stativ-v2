@@ -1,51 +1,93 @@
+@mixin mq-lg {
+  @media (min-width: 1370px) {
+    @content;
+  }
+}
+@mixin mq-sm {
+  @media (min-width: 500px) {
+    @content;
+  }
+}
+
+@mixin mq-md {
+  @media (min-width: 770px) {
+    @content;
+  }
+}
 .packages {
   width: 100%;
   .container {
-    margin-top: 150px;
-    padding: 0 40px;
+    margin-top: 60px;
+    padding: 0 10px;
+    @include mq-sm {
+      margin-top: 150px;
+      padding: 0 40px;
+    }
     .head {
       display: flex;
-      justify-content: flex-end;
+      justify-content: center;
       align-items: center;
+      @include mq-sm {
+        justify-content: flex-end;
+      }
       .package {
         background: linear-gradient(to bottom right, #734eae 30%, #00a8e2 100%);
-        padding: 30px 40px;
+        padding: 15px 15px;
         box-shadow: 1.4px 1.4px 6.7px 0.4px rgba(0, 0, 0, 0.29);
-        margin: 0 10px;
+        margin: 0 5px;
         text-align: center;
-        border-radius: 50px;
+        border-radius: 10px;
         color: #fff;
+        @include mq-sm {
+          padding: 30px 40px;
+          margin: 0 10px;
+          text-align: center;
+          border-radius: 50px;
+        }
         h2 {
           font-family: "Futura Bold";
-          font-size: 25px;
+          font-size: 15px;
           margin: 0;
           text-transform: uppercase;
+          @include mq-sm {
+            font-size: 25px;
+          }
         }
         h3 {
           font-family: "Futura Bold";
-          font-size: 70px;
+          font-size: 40px;
           margin: 0;
+          @include mq-sm {
+            font-size: 70px;
+          }
         }
         p {
           margin: 0;
           font-family: "Futura Light";
-          font-size: 20px;
+          font-size: 12px;
+          @include mq-sm {
+            font-size: 20px;
+          }
         }
-        
       }
       .bronze {
         position: relative;
         span {
           position: absolute;
           top: 0;
-          left: 21%;
+          left: 11%;
           background-color: #fff;
           color: #008cd1;
-          padding: 5px;
+          padding: 2px;
           text-align: center;
           text-transform: uppercase;
           font-family: "Futura Bold";
-          font-size: 14px;
+          font-size: 8px;
+          @include mq-sm {
+            font-size: 14px;
+            left: 21%;
+            padding: 5px;
+          }
         }
       }
     }
@@ -60,16 +102,22 @@
         padding: 10px 5px;
         position: relative;
         img {
-          width: max-content;
+          width: 35px;
           height: max-content;
+          @include mq-sm {
+            width: max-content;
+          }
         }
         p {
           font-family: "Futura Bold";
-          font-size: 25px;
+          font-size: 16px;
           text-transform: capitalize;
           color: #fff;
           margin: 0;
           margin-left: 10px;
+          @include mq-sm {
+            font-size: 25px;
+          }
         }
 
         .horizontalLine {
@@ -79,7 +127,6 @@
           border: 2px solid #fff;
           background-color: #fff;
           border-radius: 2px;
-         
         }
         .verticalLine {
           position: absolute;
@@ -97,26 +144,40 @@
           opacity: 0;
         }
       }
-      
+
       .details {
         table {
           width: 100%;
           border-collapse: collapse;
           tr {
-            td:first-child {
+            display: block;
+            .title {
               border-right: 2px solid #55c6f2;
               border-left: 2px solid #55c6f2;
-              width: 33%;
+              width: 100%;
               padding: 15px 20px;
               font-family: "Futura Light";
               font-size: 20px;
+              display: block;
+              box-sizing: border-box;
+              clear: both;
             }
-            td:not(:first-child) {
-              border-right: 2px solid #55c6f2;
-              text-align: center;
-            }
-            td:last-child {
-              border: none;
+            div {
+              box-sizing: border-box;
+              clear: both;
+              td:first-child {
+                border-right: 2px solid #55c6f2;
+                border-left: 2px solid #55c6f2;
+              }
+              td:not(:first-child) {
+                border-right: 2px solid #55c6f2;
+                text-align: center;
+              }
+              td:last-child {
+                @include mq-sm {
+                  border: none;
+                }
+              }
             }
           }
           tr:nth-child(even) {
@@ -128,5 +189,18 @@
         }
       }
     }
+  }
+}
+
+.desktop {
+  display: none;
+  @include mq-sm {
+    display: block;
+  }
+}
+.mobile {
+  display: block;
+  @include mq-sm {
+    display: none;
   }
 }

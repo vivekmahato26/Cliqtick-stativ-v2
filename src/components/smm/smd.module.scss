@@ -35,20 +35,11 @@
 }
 
 @mixin mq-xl {
-  @media (min-width: 1400px) {
+  @media (min-width: 1390px) {
     @content;
   }
 }
-@mixin mq-mac {
-  @media (min-width: 1500px) {
-    @content;
-  }
-}
-@mixin mq-xxl {
-  @media (min-width: 1800px) {
-    @content;
-  }
-}
+
 .smd {
   width: 100%;
   height: 2700px;
@@ -87,9 +78,6 @@
               }
               @include mq-lg {
                 margin-left: 25%;
-              }
-              @include mq-mac {
-                margin-left: 20%;
               }
             }
             .subtitle {
@@ -139,9 +127,6 @@
             @include mq-xl {
               left: 30%;
               top: 5%;
-            }
-            @include mq-xxl {
-              width: 900px;
             }
           }
           .img {
@@ -194,9 +179,7 @@
                 margin-right: 30%;
               }
               
-              @include mq-mac {
-                margin-right: 20%;
-              }
+             
             }
             .subtitle {
               margin-top: 40%;
@@ -219,9 +202,7 @@
               left: 20%;
               top: 5%;
             }
-            @include mq-xxl {
-              width: 900px;
-            }
+            
           }
           .img {
             position: absolute;
@@ -250,18 +231,10 @@
               right: 15%;
             }
             @include mq-xl {
-              right: 22%;
+              right: 15%;
               top: 0%;
             }
-            @include mq-lap {
-              right: 18%;
-            }
-            @include mq-mac {
-              right: 10%;
-            }
-            @include mq-xxl {
-              right: 22%;
-            }
+            
           }
         }
         .subContainer3 {
@@ -285,9 +258,7 @@
                 margin-left: 28%;
               }
              
-              @include mq-mac {
-                margin-left: 20%;
-              }
+             
             }
             .subtitle {
               margin-top: 35%;
@@ -309,9 +280,7 @@
               left: 30%;
               top: 5%;
             }
-            @include mq-xxl {
-              width: 900px;
-            }
+            
           }
           .img {
             position: absolute;
@@ -389,9 +358,7 @@
               left: 20%;
               top: 5%;
             }
-            @include mq-xxl {
-              width: 900px;
-            }
+            
           }
           .img {
             position: absolute;
@@ -420,19 +387,14 @@
             @include mq-mdpi {
               right: 15%;
             }
-            @include mq-xl {
-              right: 22%;
-              top: 0%;
-            }
             @include mq-lap {
               right: 18%;
             }
-            @include mq-mac {
-              right: 10%;
+            @include mq-xl {
+              right: 15%;
+              top: 0%;
             }
-            @include mq-xxl {
-              right: 22%;
-            }
+           
           }
         }
         .subContainer5 {
@@ -487,9 +449,7 @@
               left: 30%;
               top: 5%;
             }
-            @include mq-xxl {
-              width: 900px;
-            }
+           
           }
           .img {
             position: absolute;

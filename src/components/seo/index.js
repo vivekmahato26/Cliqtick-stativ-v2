@@ -63,7 +63,7 @@ export default function Seo() {
             <span>
               <h4>Name</h4>
               <p>
-                At SEO Experts India, our rates are just a small fraction of the
+                Our rates are just a small fraction of the
                 return on investment that we ensure.We realize that each
                 business is different and therefore we customize our packages
                 based on the requirements of your business. Our SEO service
